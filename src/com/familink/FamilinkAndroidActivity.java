@@ -53,7 +53,7 @@ public class FamilinkAndroidActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//Intent intent = new Intent(getBaseContext(), SelectGroupActivity.class);
+				//Intent intent = new Intent(getBaseContext(), MessageActivity.class);
 	        	//startActivityForResult(intent, 0);				
 			}
 		});

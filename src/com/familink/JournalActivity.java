@@ -83,6 +83,42 @@ public class JournalActivity extends Activity {
 				
 			}
 		});
+        
+        new_meal = (Button) findViewById(R.id.meals_add_button);
+        new_meal.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				View view = getLayoutInflater().inflate( R.layout.meals_form, null );				
+				AlertDialog.Builder builder = new AlertDialog.Builder(JournalActivity.this);
+			    builder.setTitle("Add a new meal");
+			    builder.setView(view);
+
+			    builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+
+			        public void onClick(DialogInterface dialog, int which) {
+			            // Do nothing but close the dialog
+			            dialog.dismiss();
+			            Toast.makeText(JournalActivity.this, "Meal created", Toast.LENGTH_SHORT).show();
+			        }
+
+			    });
+
+			    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+
+			        @Override
+			        public void onClick(DialogInterface dialog, int which) {
+			            // Do nothing
+			            dialog.dismiss();
+			        }
+			    });
+			    
+			    builder.create().show();
+				
+			}
+		});
        
         
     }
