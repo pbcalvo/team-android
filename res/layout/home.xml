@@ -5,65 +5,197 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent">
   
-   <LinearLayout 
-    	android:orientation="horizontal"
-    	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content"
-    	>
+   <RelativeLayout
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:orientation="horizontal"
+       android:gravity="center" >
     	
-    	</LinearLayout>
-    	
-    <LinearLayout 
-    	android:orientation="vertical"
-    	android:layout_width="fill_parent"
-    	
-    	android:layout_height="wrap_content"
-    	>
-    	
-    	<TextView 
-    	android:id="@+id/resultado"
+       <TextView 
+    	android:id="@+id/titulo"
     	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
-    	android:text="0"/>
+    	android:textSize="20dp"/>
+       
+    	</RelativeLayout>
     	
-    	</LinearLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="9"
+        android:orientation="vertical" >
     	
-    <LinearLayout 
-    	android:orientation="horizontal"
-    	android:layout_width="fill_parent"
-    	
+    	<TextView 
+    	android:id="@+id/title_kid"
+    	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
-    	>
+    	android:text="Select a Kid"/>
+    	
+    	
+       <ScrollView
+           android:layout_below="@+id/title_kid"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           
+           <TableLayout 
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"               
+               >
+               <RelativeLayout
+                   android:id="@+id/relative_kid1"
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:clickable="true" >
+              	 <ImageButton 
+              	   android:id="@+id/picture_kid1"
+                   android:layout_width="50dp"
+                   android:layout_height="50dp"
+                   android:layout_alignParentTop="true"
+                   android:layout_alignParentLeft="true"/>
+              	 <TextView 
+              	   android:id="@+id/name_kid1"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_toRightOf="@+id/picture_kid1"
+                   android:layout_alignParentTop="true"
+                   android:text="Amanda Solis"
+                   android:textSize="15sp"/>
+               	<TextView 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_toRightOf="@+id/picture_kid1"
+                   android:layout_below="@+id/name_kid1"
+                   android:text="Carlos y Carolina"
+                   android:textSize="12sp"/>
+               	</RelativeLayout>
+               	
+                <RelativeLayout
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:clickable="true" >
+              	 <ImageButton 
+              	   android:id="@+id/picture_kid2"
+                   android:layout_width="50dp"
+                   android:layout_height="50dp"
+                   android:layout_alignParentTop="true"
+                   android:layout_alignParentLeft="true"/>
+              	 <TextView 
+              	   android:id="@+id/name_kid2"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_toRightOf="@+id/picture_kid2"
+                   android:layout_alignParentTop="true"
+                   android:text="Amanda Solis"
+                   android:textSize="15sp"/>
+               	<TextView 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_toRightOf="@+id/picture_kid2"
+                   android:layout_below="@+id/name_kid2"
+                   android:text="Carlos y Carolina"
+                   android:textSize="12sp"/>
+               	</RelativeLayout>
+
+                 <RelativeLayout
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:clickable="true" >
+              	 <ImageButton 
+              	   android:id="@+id/picture_kid3"
+                   android:layout_width="50dp"
+                   android:layout_height="50dp"
+                   android:layout_alignParentTop="true"
+                   android:layout_alignParentLeft="true"/>
+              	 <TextView 
+              	   android:id="@+id/name_kid3"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_toRightOf="@+id/picture_kid3"
+                   android:layout_alignParentTop="true"
+                   android:text="Amanda Solis"
+                   android:textSize="15sp"/>
+               	<TextView 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_toRightOf="@+id/picture_kid3"
+                   android:layout_below="@+id/name_kid3"
+                   android:text="Carlos y Carolina"
+                   android:textSize="12sp"/>
+               	</RelativeLayout>
+               	
+                 <RelativeLayout
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:clickable="true" >
+              	 <ImageButton 
+              	   android:id="@+id/picture_kid4"
+                   android:layout_width="50dp"
+                   android:layout_height="50dp"
+                   android:layout_alignParentTop="true"
+                   android:layout_alignParentLeft="true"/>
+              	 <TextView 
+              	   android:id="@+id/name_kid4"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_toRightOf="@+id/picture_kid4"
+                   android:layout_alignParentTop="true"
+                   android:text="Amanda Solis"
+                   android:textSize="15sp"/>
+               	<TextView 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_toRightOf="@+id/picture_kid4"
+                   android:layout_below="@+id/name_kid4"
+                   android:text="Carlos y Carolina"
+                   android:textSize="12sp"/>
+               	</RelativeLayout>
+                             
+           </TableLayout>
+           
+           
+       </ScrollView>
+    
+    	
+    	
+    	</RelativeLayout>
+    	
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="horizontal" >
     	    		
     		<Button 
     			android:id="@+id/journal_button"
     			android:text="Journal"
     			android:layout_height="fill_parent"
-    			
-    			android:layout_width="wrap_content"
+    			android:layout_width="0dip"
+    			android:layout_weight="1"
     		/>
     		
     		<Button 
     			android:id="@+id/message_button"
     			android:text="Message"
     			android:layout_height="fill_parent"
-    			
-    			android:layout_width="wrap_content"
+    			android:layout_width="0dip"
+    			android:layout_weight="1"
     		/>
     		
     		<Button 
     			android:id="@+id/announcement_button"
     			android:text="Announcement"
     			android:layout_height="fill_parent"
-    			
-    			android:layout_width="wrap_content"
+    			android:layout_weight="1"
+    			android:layout_width="0dip"
     		/>
     		
     		<Button 
     			android:id="@+id/calendar_button"
     			android:text="Calendar"
-    			android:layout_width="wrap_content"
+    			android:layout_width="0dip"
     			android:layout_height="fill_parent"
+    			android:layout_weight="1"
     		/>
     		
     	</LinearLayout>

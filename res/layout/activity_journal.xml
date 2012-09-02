@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+  
+   <RelativeLayout
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:orientation="horizontal" >
+       <Button 
+           android:id="@+id/back_group"
+           android:layout_centerVertical="true"
+           android:layout_alignParentLeft="true"
+           android:layout_width="wrap_content"
+           android:layout_height="30sp"
+           android:text="Group 1"
+           android:textSize="10sp" />       
+    	
+       <TextView 
+    	android:id="@+id/titulo"
+    	android:layout_centerHorizontal="true"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:textSize="20dp"/>
+       
+    	</RelativeLayout>
+    	
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="9"
+        android:orientation="vertical"
+        android:layout_marginBottom="10sp" >
+    	
+        
+    	
+       <ScrollView
+           android:layout_below="@+id/title_kid"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TableLayout 
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+           
+           	<TableLayout 
+               android:id="@+id/observations_layout"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"               
+               >
+               <TextView 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Observations"
+                   android:textSize="15sp"/>
+               <RelativeLayout
+                   android:id="@+id/obs1"
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:clickable="true"
+                   android:layout_marginLeft="10sp" >
+                   <TextView 
+                       android:id="@+id/obs_content1"
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:lines="2"
+                       android:ellipsize="marquee"
+                       android:textSize="12sp"
+                       android:layout_alignParentTop="true"
+                       android:text="Amanda se porto muy bien hoy, comió toda su comida y hizo nuevos amigos. Su comportamiento ha mejorado mucho desde la semana pasada. Excelente trabajo en casa."
+                       />  
+                   <TextView 
+                       android:id="@+id/obs_date1"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"    
+                       android:layout_below="@+id/obs_content1"
+                       android:layout_alignParentRight="true"
+                       android:text="14:35, today"
+                       android:textSize="10sp" />     
+               </RelativeLayout>
+               <RelativeLayout
+                   android:id="@+id/obs2"
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:clickable="true"
+                   android:layout_marginLeft="10sp" >
+                   <TextView 
+                       android:id="@+id/obs_content2"
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:lines="2"
+                       android:ellipsize="marquee"
+                       android:textSize="12sp"
+                       android:layout_alignParentTop="true"
+                       android:text="Amanda no se portó muy bien hoy, se pelio con una compañera y tuvo un comportamiento bastante egoísta. Les pediía que porfavor trabajen esto durante el fin de semana. Gracias"
+                       />  
+                   <TextView 
+                       android:id="@+id/obs_date2"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"    
+                       android:layout_below="@+id/obs_content2"
+                       android:layout_alignParentRight="true"
+                       android:text="16:35, Fri 31 Ago"
+                       android:textSize="10sp"       />      
+               </RelativeLayout>
+               <RelativeLayout 
+                   android:id="@+id/obs_add"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <Button 
+                       android:id="@+id/obs_add_button"
+                       android:layout_centerInParent="true"
+                       android:layout_width="wrap_content"
+                       android:layout_height="30sp"
+                       android:text="Add new observation"
+                       android:textSize="10sp"/>
+                   
+               </RelativeLayout>
+           	</TableLayout>
+           	
+           	<TableLayout 
+               android:id="@+id/meals_layout"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"               
+               >
+               <TextView 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Meals"
+                   android:textSize="15sp"/>
+               <RelativeLayout
+                   android:id="@+id/meals1"
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:clickable="true"
+                   android:layout_marginLeft="10sp" >
+                   <TextView 
+                       android:id="@+id/meals_content1"
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:lines="1"
+                       android:ellipsize="marquee"
+                       android:textSize="12sp"
+                       android:layout_alignParentTop="true"
+                       android:text="Papilla de manzana"
+                       />  
+                   <TextView 
+                       android:id="@+id/meals_date1"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"    
+                       android:layout_below="@+id/meals_content1"
+                       android:layout_alignParentRight="true"
+                       android:text="Breakfast"
+                       android:textSize="10sp" />     
+               </RelativeLayout>
+               <RelativeLayout
+                   android:id="@+id/meals2"
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:clickable="true"
+                   android:layout_marginLeft="10sp" >
+                   <TextView 
+                       android:id="@+id/meals_content2"
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:lines="1"
+                       android:ellipsize="marquee"
+                       android:textSize="12sp"
+                       android:layout_alignParentTop="true"
+                       android:text="Arroz con pollo"
+                       />  
+                   <TextView 
+                       android:id="@+id/meals_date2"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"    
+                       android:layout_below="@+id/meals_content2"
+                       android:layout_alignParentRight="true"
+                       android:text="Lunch"
+                       android:textSize="10sp" />      
+               </RelativeLayout>
+               <RelativeLayout 
+                   android:id="@+id/meals_add"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <Button 
+                       android:id="@+id/meals_add_button"
+                       android:layout_centerInParent="true"
+                       android:layout_width="wrap_content"
+                       android:layout_height="30sp"
+                       android:text="Add new meal"
+                       android:textSize="10sp"/>
+                   
+               </RelativeLayout>
+           	</TableLayout>
+           	
+           	<TableLayout 
+               android:id="@+id/naps_layout"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"               
+               >
+               <TextView 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Naps"
+                   android:textSize="15sp"/>
+               <RelativeLayout
+                   android:id="@+id/naps1"
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:clickable="true"
+                   android:layout_marginLeft="10sp" >
+                   <TextView 
+                       android:id="@+id/naps_content1"
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:lines="1"
+                       android:ellipsize="marquee"
+                       android:textSize="12sp"
+                       android:layout_alignParentTop="true"
+                       android:text="2 horas"
+                       />  
+                   <TextView 
+                       android:id="@+id/naps_date1"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"    
+                       android:layout_below="@+id/naps_content1"
+                       android:layout_alignParentRight="true"
+                       android:text="15:00, today"
+                       android:textSize="10sp" />     
+               </RelativeLayout>
+               <RelativeLayout 
+                   android:id="@+id/naps_add"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <Button 
+                       android:id="@+id/naps_add_button"
+                       android:layout_centerInParent="true"
+                       android:layout_width="wrap_content"
+                       android:layout_height="30sp"
+                       android:text="Add new nap"
+                       android:textSize="10sp"/>
+                   
+               </RelativeLayout>
+              
+           	</TableLayout>
+           	
+           	<TableLayout 
+               android:id="@+id/depos_layout"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"               
+               >
+               <TextView 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Depositions"
+                   android:textSize="15sp"/>
+               <RelativeLayout
+                   android:id="@+id/depos1"
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:clickable="true"
+                   android:layout_marginLeft="10sp" >
+                   <TextView 
+                       android:id="@+id/depos_content1"
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:lines="1"
+                       android:ellipsize="marquee"
+                       android:textSize="12sp"
+                       android:layout_alignParentTop="true"
+                       android:text="Normal"
+                       />  
+                   <TextView 
+                       android:id="@+id/dapos_date1"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"    
+                       android:layout_below="@+id/depos_content1"
+                       android:layout_alignParentRight="true"
+                       android:text="11:00, today"
+                       android:textSize="10sp" />     
+               </RelativeLayout>
+               <RelativeLayout 
+                   android:id="@+id/depos_add"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <Button 
+                       android:id="@+id/depos_add_button"
+                       android:layout_centerInParent="true"
+                       android:layout_width="wrap_content"
+                       android:layout_height="30sp"
+                       android:text="Add new deposition"
+                       android:textSize="10sp"/>
+                   
+               </RelativeLayout>
+              
+           	</TableLayout>
+           	
+           </TableLayout>
+           
+       </ScrollView>
+    
+    	
+    	
+    	</RelativeLayout>
+    	
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="horizontal" >
+    	    		
+    		<Button 
+    			android:id="@+id/journal_button"
+    			android:text="Journal"
+    			android:layout_height="fill_parent"
+    			android:layout_width="0dip"
+    			android:layout_weight="1"
+    		/>
+    		
+    		<Button 
+    			android:id="@+id/message_button"
+    			android:text="Message"
+    			android:layout_height="fill_parent"
+    			android:layout_width="0dip"
+    			android:layout_weight="1"
+    		/>
+    		
+    		<Button 
+    			android:id="@+id/announcement_button"
+    			android:text="Announcement"
+    			android:layout_height="fill_parent"
+    			android:layout_weight="1"
+    			android:layout_width="0dip"
+    		/>
+    		
+    		<Button 
+    			android:id="@+id/calendar_button"
+    			android:text="Calendar"
+    			android:layout_width="0dip"
+    			android:layout_height="fill_parent"
+    			android:layout_weight="1"
+    		/>
+    		
+    	</LinearLayout>
+    
+</LinearLayout>

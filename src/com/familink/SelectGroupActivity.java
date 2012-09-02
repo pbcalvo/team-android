@@ -14,10 +14,7 @@ public class SelectGroupActivity extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_group_layout);
-        
-        Intent sender = getIntent();
-        String extraData = sender.getExtras().getString("ComingFrom");
-        
+                
         button = (Button) findViewById(R.id.group1);
         
         button.setOnClickListener(new View.OnClickListener() {
@@ -25,10 +22,9 @@ public class SelectGroupActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent();
-				//Ojo: por ahora t‡ harcodeado el 1.
-				intent.putExtra("ComingFrom", 1);
-				setResult(RESULT_OK,intent);
+				Intent intent = new Intent(getBaseContext(), FamilinkAndroidActivity.class);
+				intent.putExtra("GROUP_ID", 1);
+				startActivityForResult(intent,0);
 				finish();
 			}
 		});
