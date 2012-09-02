@@ -3,4 +3,5 @@
 *.dex
 bin/
 gen/
+.classpath
 .metadata/
