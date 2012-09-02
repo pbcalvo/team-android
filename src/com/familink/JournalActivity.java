@@ -1,7 +1,9 @@
 package com.familink;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -53,19 +55,35 @@ public class JournalActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				
-				View view = getLayoutInflater().inflate( R.layout.observation_form, null );
-				dialog = new Dialog(JournalActivity.this);
-				dialog.setContentView(view);
-				dialog.setTitle("Add a new observation");
-				dialog.show();
-				
+				View view = getLayoutInflater().inflate( R.layout.observation_form, null );				
+				AlertDialog.Builder builder = new AlertDialog.Builder(JournalActivity.this);
+			    builder.setTitle("Add a new observation");
+			    builder.setView(view);
+
+			    builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+
+			        public void onClick(DialogInterface dialog, int which) {
+			            // Do nothing but close the dialog
+			            dialog.dismiss();
+			            Toast.makeText(JournalActivity.this, "Observation created", Toast.LENGTH_SHORT).show();
+			        }
+
+			    });
+
+			    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+
+			        @Override
+			        public void onClick(DialogInterface dialog, int which) {
+			            // Do nothing
+			            dialog.dismiss();
+			        }
+			    });
+			    
+			    builder.create().show();
 				
 			}
 		});
-        
-        
-        
-        
+       
         
     }
 
