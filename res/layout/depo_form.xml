@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical" >
     
     <ScrollView
@@ -12,11 +12,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
+    
+    
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Meal"
+        android:text="Time"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20sp" >
+    
+
+    <TimePicker
+        android:id="@+id/timePicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </TableLayout>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Characteristic"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TableLayout
@@ -25,98 +44,60 @@
         android:layout_marginLeft="20sp" >
 
         <RadioGroup
-            android:id="@+id/meal_group"
+            android:id="@+id/depo_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
             <RadioButton
-                android:id="@+id/breakfast"
+                android:id="@+id/normal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Breakfast" />
+                android:text="Normal" />
 
             <RadioButton
-                android:id="@+id/snack_am"
+                android:id="@+id/solid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Snack AM" />
+                android:text="Solid" />
 
             <RadioButton
-                android:id="@+id/lunch"
+                android:id="@+id/soft"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lunch" />
+                android:text="Soft" />
             
             <RadioButton
-                android:id="@+id/snack_pm"
+                android:id="@+id/fluid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Snack PM" />
+                android:text="Fluid" />
             
             <RadioButton
-                android:id="@+id/dinner"
+                android:id="@+id/pee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dinner" />
+                android:text="Pee" />
+            
+            <RadioButton
+                android:id="@+id/dry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dry" />
+            
+            <RadioButton
+                android:id="@+id/other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other" />
         </RadioGroup>
 
-    </TableLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="How much?"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TableLayout 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20sp">
-
-        <RadioGroup
-            android:id="@+id/howmuch_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <RadioButton
-                android:id="@+id/tasted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Just tasted it" />
-
-            <RadioButton
-                android:id="@+id/something"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Something" />
-
-            <RadioButton
-                android:id="@+id/half"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Half" />
-            
-            <RadioButton
-                android:id="@+id/almost"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Almost everything" />
-            
-            <RadioButton
-                android:id="@+id/all"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="All" />
-        </RadioGroup>
-    
     </TableLayout>
     
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Want to specify a meal?"
+        android:text="Comments"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
     <TableLayout 
@@ -129,7 +110,8 @@
             android:id="@+id/editText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Subway" >
+            android:hint="Add a comment" >
+
         		</EditText>
 
         </TableLayout>
