@@ -1,0 +1,181 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Group 1"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:orientation="vertical" >
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Announcements"
+            android:textSize="20dp" />
+        
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New" />
+       
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="martes 24 de julio de 2012"
+                    android:textSize="10dp"/>
+                
+	                <LinearLayout
+	                    android:id="@+id/relative_announcement1"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:clickable="true"
+	                    android:orientation="vertical"
+	                    android:layout_marginBottom="10sp">
+	                
+	                    <LinearLayout
+	                        android:layout_width="fill_parent"
+	                        android:layout_height="wrap_content"
+	                        android:orientation="horizontal">
+	                        
+	                        <LinearLayout
+	                            android:layout_width="wrap_content"
+	                            android:layout_height="wrap_content"
+	                            android:orientation="vertical">
+	                            
+		                        <TextView
+		                            android:layout_width="wrap_content"
+		                            android:layout_height="wrap_content"
+		                            android:text="Reunión de apoderados"
+		                            android:textSize="18dp" />
+	                         
+								<TextView
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:text="Estimados apoderados, tendremos una..."
+									android:textSize="15dp"/>
+	                            
+	                        </LinearLayout>
+	                        
+	                        <TextView
+	                            android:layout_width="wrap_content"
+	                            android:layout_height="wrap_content"
+	                            android:text="11:29"
+	                            android:textSize="15dp"/>
+	                        
+	                    </LinearLayout>
+	                    
+	                </LinearLayout>
+	                
+	                <LinearLayout
+	                    android:id="@+id/relative_announcement1"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:clickable="true"
+	                    android:orientation="vertical"
+	                    android:layout_marginTop="10sp">
+	                
+	                    <LinearLayout
+	                        android:layout_width="fill_parent"
+	                        android:layout_height="wrap_content"
+	                        android:orientation="horizontal">
+	                        
+	                        <LinearLayout
+	                            android:layout_width="wrap_content"
+	                            android:layout_height="wrap_content"
+	                            android:orientation="vertical">
+	                            
+		                        <TextView
+		                            android:layout_width="wrap_content"
+		                            android:layout_height="wrap_content"
+		                            android:text="Reunión de apoderados"
+		                            android:textSize="18dp" />
+	                         
+								<TextView
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:text="Estimados apoderados, tendremos una..."
+									android:textSize="15dp"/>
+	                            
+	                        </LinearLayout>
+	                        
+	                        <TextView
+	                            android:layout_width="wrap_content"
+	                            android:layout_height="wrap_content"
+	                            android:text="11:27"
+	                            android:textSize="15dp"/>
+	                        
+	                    </LinearLayout>
+	                    
+	                </LinearLayout>
+                
+                </LinearLayout>
+            
+            
+            
+        </ScrollView>
+     	
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/journal_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Journal" />
+
+        <Button
+            android:id="@+id/messages_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Messages" />
+
+        <Button
+            android:id="@+id/announcements_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Announcements" />
+
+        <Button
+            android:id="@+id/calendar_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Calendar" />
+    </LinearLayout>
+
+</LinearLayout>

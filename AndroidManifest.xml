@@ -25,6 +25,15 @@
             android:name=".JournalActivity"
             android:label="@string/title_activity_journal" >
         </activity>
+        <activity
+            android:name=".AnnouncementsActivity"
+            android:label="@string/title_activity_announcements" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
