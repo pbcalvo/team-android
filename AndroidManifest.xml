@@ -25,6 +25,14 @@
             android:name=".JournalActivity"
             android:label="@string/title_activity_journal" >
         </activity>
+        <activity
+            android:name=".MessageActivity"
+            android:label="@string/title_activity_message" >
+        </activity>
+        <activity
+            android:name=".MessageKid"
+            android:label="@string/title_activity_message_kid" >
+           </activity>
     </application>
 
 </manifest>
