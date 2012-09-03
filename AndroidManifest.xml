@@ -26,7 +26,6 @@
             android:label="@string/title_activity_journal" >
         </activity>
         <activity
-<<<<<<< HEAD
             android:name=".MenuButtonActivity"
             android:label="@string/title_activity_menu_button" >
             <intent-filter>
@@ -35,7 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-=======
+        <activity
             android:name=".AnnouncementsActivity"
             android:label="@string/title_activity_announcements" >
          </activity>
@@ -48,9 +47,6 @@
             android:label="@string/title_activity_message_kid" >
         </activity>
 		   
-		   
-		   
->>>>>>> 5932f35a1e1c87f519f8f7ff44ed74d0fcd602e6
     </application>
 
 </manifest>
