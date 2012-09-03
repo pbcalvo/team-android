@@ -6,6 +6,12 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_journal">JournalActivity</string>
+<<<<<<< HEAD
     <string name="title_activity_menu_button">MenuButtonActivity</string>
+=======
+    <string name="title_activity_announcements">AnnouncementsActivity</string>
+    <string name="title_activity_message">MessageActivity</string>
+    <string name="title_activity_message_kid">MessageKid</string>
+>>>>>>> 5932f35a1e1c87f519f8f7ff44ed74d0fcd602e6
 
 </resources>
