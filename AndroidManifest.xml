@@ -28,20 +28,18 @@
         <activity
             android:name=".AnnouncementsActivity"
             android:label="@string/title_activity_announcements" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        <activity
+         </activity>
+		   <activity
             android:name=".MessageActivity"
             android:label="@string/title_activity_message" >
         </activity>
         <activity
             android:name=".MessageKid"
             android:label="@string/title_activity_message_kid" >
-           </activity>
         </activity>
+		   
+		   
+		   
     </application>
 
 </manifest>
