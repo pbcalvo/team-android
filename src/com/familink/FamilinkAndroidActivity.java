@@ -3,6 +3,7 @@ package com.familink;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -95,6 +96,12 @@ public class FamilinkAndroidActivity extends Activity {
 			}
 		});
         
+    }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_menu_button, menu);
+        return true;
     }
     
 }

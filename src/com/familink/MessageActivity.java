@@ -55,7 +55,7 @@ public class MessageActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_message, menu);
+        getMenuInflater().inflate(R.menu.activity_menu_button, menu);
         return true;
     }
 }
