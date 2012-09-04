@@ -56,7 +56,8 @@ public class FamilinkAndroidActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(getBaseContext(), MessageActivity.class);
-	        	startActivityForResult(intent, 0);				
+	        	startActivityForResult(intent, 0);	
+	        	finish();
 			}
 		});
         
@@ -67,7 +68,8 @@ public class FamilinkAndroidActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(getBaseContext(), AnnouncementsActivity.class);
-	        	startActivityForResult(intent, 0);				
+	        	startActivityForResult(intent, 0);		
+	        	finish();
 			}
 		});
         

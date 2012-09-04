@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 public class AnnouncementsActivity extends Activity {
 
 	Button newActivityButton;
+	Button journal;
+	Button message;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,8 @@ public class AnnouncementsActivity extends Activity {
 					}
 				});
 			    
+			    
+			    
 			    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 					
 					@Override
@@ -50,7 +55,33 @@ public class AnnouncementsActivity extends Activity {
 				
 			    builder.create().show();
 			}
+
+			
 		});
+        
+        /*message = (Button) findViewById(R.id.message_button);
+        message.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(getBaseContext(), MessageActivity.class);
+	        	startActivityForResult(intent, 0);	
+	        	finish();
+			}
+		});
+        journal = (Button) findViewById(R.id.journal_button);
+        journal.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub	
+				Intent intent = new Intent(getBaseContext(), JournalActivity.class);
+				intent.putExtra("GROUP_ID", 1);
+	        	startActivityForResult(intent, 0);	
+	        	finish();
+			}
+		});*/
     }
 
     @Override

@@ -46,6 +46,62 @@ public class MessageActivity extends Activity {
         
         
         
+        
+        message = (Button) findViewById(R.id.message_button);
+        message.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//Intent intent = new Intent(getBaseContext(), MessageActivity.class);
+	        	//startActivityForResult(intent, 0);		
+	        	//finish();
+			}
+			
+			
+		});
+        
+     
+        
+        journal = (Button) findViewById(R.id.journal_button);
+        journal.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub	
+				Intent intent = new Intent(getBaseContext(), FamilinkAndroidActivity.class);
+				intent.putExtra("GROUP_ID", 1);
+	        	startActivityForResult(intent, 0);	
+	        	finish();
+			}
+		});
+        
+      
+        announcement = (Button) findViewById(R.id.announcement_button);
+        announcement.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(getBaseContext(), AnnouncementsActivity.class);
+	        	startActivityForResult(intent, 0);	
+	        	finish();
+			}
+		});
+        
+        calendar = (Button) findViewById(R.id.calendar_button);
+        calendar.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//Intent intent = new Intent(getBaseContext(), SelectGroupActivity.class);
+	        	//startActivityForResult(intent, 0);				
+			}
+		});
+      
+        
+        
     }
     
 
