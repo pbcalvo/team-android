@@ -28,11 +28,6 @@
         <activity
             android:name=".MenuButtonActivity"
             android:label="@string/title_activity_menu_button" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".AnnouncementsActivity"

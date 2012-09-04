@@ -19,6 +19,9 @@ public class JournalActivity extends Activity {
 	String kid_name;
 	Button back_group, new_obs, new_meal, new_nap, new_depo, add_obs, cancel_obs;
 	Dialog dialog;
+	Button journal;
+	Button message;
+	Button announcement;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -189,6 +192,36 @@ public class JournalActivity extends Activity {
 			    
 			    builder.create().show();
 				
+			}
+		});
+        
+        
+        message = (Button) findViewById(R.id.message_button);
+        message.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(getBaseContext(), MessageKid.class);
+				intent.putExtra("KID_ID", 1);
+				intent.putExtra("KID_NAME", "Amanda Solis");
+				intent.putExtra("GROUP_ID", group_id);
+				startActivityForResult(intent,0);
+				finish();
+			}
+			
+			
+		});
+        
+        announcement = (Button) findViewById(R.id.announcement_button);
+        announcement.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(getBaseContext(), AnnouncementsActivity.class);
+	        	startActivityForResult(intent, 0);
+	        	finish();
 			}
 		});
        
