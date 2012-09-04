@@ -1,4 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- Falta determinar los showAsAction de los item -->
+    
     <group android:id="@+id/group_selection">
     	<item android:id="@+id/campus_menu_button"
 		android:title="Campus"
