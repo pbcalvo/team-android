@@ -1,5 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_settings"
-        android:title="@string/menu_settings"
-        android:orderInCategory="100" />
+    <group android:id="@+id/group_selection">
+    	<item android:id="@+id/campus_menu_button"
+		android:title="Campus"
+		android:icon="@drawable/icon" />
+		<item android:id="@+id/groups_menu_button"
+		android:title="Groups"
+		android:icon="@drawable/icon" />
+	</group>
+	<group android:id="@+id/group_settings">
+	    <item android:id="@+id/settings_menu_button"
+		android:title="Settings"
+		android:icon="@drawable/icon" />
+		<item android:id="@+id/logout_menu_button"
+		android:title="Log Out"
+		android:icon="@drawable/icon" />
+	</group>
+	
 </menu>
