@@ -62,7 +62,8 @@ public class JournalActivity extends Activity {
 
 			    builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
 
-			        public void onClick(DialogInterface dialog, int which) {
+			        @Override
+					public void onClick(DialogInterface dialog, int which) {
 			            // Do nothing but close the dialog
 			            dialog.dismiss();
 			            Toast.makeText(JournalActivity.this, "Observation created", Toast.LENGTH_SHORT).show();
@@ -98,7 +99,8 @@ public class JournalActivity extends Activity {
 
 			    builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
 
-			        public void onClick(DialogInterface dialog, int which) {
+			        @Override
+					public void onClick(DialogInterface dialog, int which) {
 			            // Do nothing but close the dialog
 			            dialog.dismiss();
 			            Toast.makeText(JournalActivity.this, "Meal created", Toast.LENGTH_SHORT).show();
@@ -134,7 +136,8 @@ public class JournalActivity extends Activity {
 
 			    builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
 
-			        public void onClick(DialogInterface dialog, int which) {
+			        @Override
+					public void onClick(DialogInterface dialog, int which) {
 			            // Do nothing but close the dialog
 			            dialog.dismiss();
 			            Toast.makeText(JournalActivity.this, "Nap created", Toast.LENGTH_SHORT).show();
@@ -170,7 +173,8 @@ public class JournalActivity extends Activity {
 
 			    builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
 
-			        public void onClick(DialogInterface dialog, int which) {
+			        @Override
+					public void onClick(DialogInterface dialog, int which) {
 			            // Do nothing but close the dialog
 			            dialog.dismiss();
 			            Toast.makeText(JournalActivity.this, "Deposition created", Toast.LENGTH_SHORT).show();
