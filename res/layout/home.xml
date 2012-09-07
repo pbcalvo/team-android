@@ -30,7 +30,7 @@
     	android:id="@+id/title_kid"
     	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
-    	android:text="Select a Kid"/>
+    	android:text="@string/kid_select"/>
     	
     	
        <ScrollView
@@ -168,7 +168,7 @@
     	    		
     		<Button 
     			android:id="@+id/journal_button"
-    			android:text="Journal"
+    			android:text="@string/journal_title"
     			android:layout_height="fill_parent"
     			android:layout_width="0dip"
     			android:layout_weight="1"
@@ -176,7 +176,7 @@
     		
     		<Button 
     			android:id="@+id/message_button"
-    			android:text="Message"
+    			android:text="@string/message_title"
     			android:layout_height="fill_parent"
     			android:layout_width="0dip"
     			android:layout_weight="1"
@@ -184,7 +184,7 @@
     		
     		<Button 
     			android:id="@+id/announcement_button"
-    			android:text="Announcement"
+    			android:text="@string/announcement_title"
     			android:layout_height="fill_parent"
     			android:layout_weight="1"
     			android:layout_width="0dip"
@@ -192,7 +192,7 @@
     		
     		<Button 
     			android:id="@+id/calendar_button"
-    			android:text="Calendar"
+    			android:text="@string/calendar_title"
     			android:layout_width="0dip"
     			android:layout_height="fill_parent"
     			android:layout_weight="1"

@@ -26,14 +26,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Announcements"
+            android:text="@string/announcement_title"
             android:textSize="20dp" />
         
         <Button
             android:id="@+id/add_announcement_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New" />
+            android:text="@string/string_new" />
        
 
         <ScrollView
@@ -203,28 +203,28 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Journal" />
+            android:text="@string/journal_title" />
 
         <Button
             android:id="@+id/messages_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Messages" />
+            android:text="@string/message_title" />
 
         <Button
             android:id="@+id/announcements_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Announcements" />
+            android:text="@string/announcement_title" />
 
         <Button
             android:id="@+id/calendar_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Calendar" />
+            android:text="@string/calendar_title" />
     </LinearLayout>
 
 </LinearLayout>

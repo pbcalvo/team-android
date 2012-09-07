@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, FamilinkAndroidActivity!</string>
+    <string name="app_name">FamilinkAndroid</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Opciones</string>
+    <string name="title_activity_journal">JournalActivity</string>
+    <string name="title_activity_menu_button">MenuButtonActivity</string>
+    <string name="title_activity_announcements">AnnouncementsActivity</string>
+    <string name="title_activity_message">MessageActivity</string>
+    <string name="title_activity_message_kid">MessageKid</string>
+    
+    <!-- Journal String Resources -->
+    <string name="journal_title">Agenda</string>   
+    
+    <!-- Observation String Resources -->
+    <string name="obs_done">Observación Agregada</string>
+    <string name="obs_new">Agregar Nueva Observación</string>
+    <string name="obs_title">Observaciones</string>
+    
+    <!-- Meal String Resources -->
+    <string name="meal_detail">¿Quiere especificar comida?</string>
+    <string name="meal_done">Info de Comida Agregada </string>
+    <string name="meal_new">Agregar Nueva Info de Comida</string>
+    <string name="meal_title">Comidas</string>
+    
+    <!-- Nap String Resouces -->
+    <string name="nap_done">Info de Siesta Agregada</string>
+    <string name="nap_new">Agregar Nueva Info de Siesta</string>
+    <string name="nap_title">Siestas</string>
+    
+    <!-- Stool String Resouces -->
+    <string name="stool_done">Info de Deposición Agregada</string>
+    <string name="stool_new">Agregar Nueva Info de Deposición</string>
+    <string name="stool_title">Deposiciones</string>
+    
+    <!-- Message String Resources -->
+    <string name="message_title">Mensajes</string>
+  
+    <!-- Announcement String Resources -->
+    <string name="announcement_new">Agregar Nuevo Anuncio</string>
+    <string name="announcement_sent">Anuncion Enviado</string>
+    <string name="announcement_title">Anuncios</string>
+    
+    <!-- Calendar String Resources -->
+    <string name="calendar_title">Calendario</string>
+    
+    <!-- Comments String Resources -->
+    <string name="comments_title">Comentarios</string>
+    <string name="comments_new">Agregar un Comentario</string>
+    
+    <!-- General Resources -->
+    <string name="string_add">Agregar</string>
+    <string name="string_all">Todo</string>
+    <string name="string_alev">Casi Todo</string>
+    
+    <string name="string_breakfast">Desayuno</string>
+    
+    <string name="string_campus">Campus</string>
+    <string name="string_cancel">Cancelar</string>
+    <string name="string_characteristic">Característica</string>
+    
+    <string name="string_dinner">Cena</string>
+    <string name="string_dry">Seca</string>
+    
+    <string name="string_fluid">Fluida</string>
+    <string name="string_from">Desde</string>
+    
+    <string name="string_groups">Grupos</string>
+    
+    <string name="string_half">Mitad</string>
+    <string name="string_howmuch">¿Cuánto Comió?</string>
+    
+    <string name="string_justtasted">Apenas la probó</string>
+    
+    <string name="string_logout">Cerrar Sesión</string>
+    <string name="string_lunch">Almuerzo</string>
+    
+    <string name="string_message">Mensaje</string>
+    
+    <string name="string_new">Nuevo</string>
+    <string name="string_normal">Normal</string>
+    
+    <string name="string_other">Otra</string>
+    
+    <string name="string_pee">Pipí</string>
+    
+    <string name="string_send">Enviar</string>
+    <string name="string_snackam">Snack Mañana</string>
+    <string name="string_snackpm">Snack Tarde</string>
+    <string name="string_soft">Blanda</string>
+    <string name="string_solid">Sólida</string>
+    <string name="string_something">Algo</string>
+    <string name="string_subject">Asunto</string>
+    
+    <string name="string_time">Hora</string>
+    <string name="string_to">Hasta</string>
+    
+    
+    <string name="kid_select">Seleccione un Niño</string>
+    <string name="group_select">Seleccione un Grupo</string>
+
+</resources>

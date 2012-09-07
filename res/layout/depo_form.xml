@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Time"
+        android:text="@string/string_time"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TableLayout
@@ -35,7 +35,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Characteristic"
+        android:text="@string/string_characteristic"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TableLayout
@@ -53,43 +53,43 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Normal" />
+                android:text="@string/string_normal" />
 
             <RadioButton
                 android:id="@+id/solid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Solid" />
+                android:text="@string/string_solid" />
 
             <RadioButton
                 android:id="@+id/soft"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Soft" />
+                android:text="@string/string_soft" />
             
             <RadioButton
                 android:id="@+id/fluid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fluid" />
+                android:text="@string/string_fluid" />
             
             <RadioButton
                 android:id="@+id/pee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pee" />
+                android:text="@string/string_pee" />
             
             <RadioButton
                 android:id="@+id/dry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dry" />
+                android:text="@string/string_dry" />
             
             <RadioButton
                 android:id="@+id/other"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Other" />
+                android:text="@string/string_other" />
         </RadioGroup>
 
     </TableLayout>
@@ -97,7 +97,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comments"
+        android:text="@string/comments_title"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
     <TableLayout 
@@ -110,7 +110,7 @@
             android:id="@+id/editText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Add a comment" >
+            android:hint="@string/comments_new" >
 
         		</EditText>
 
