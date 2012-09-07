@@ -16,6 +16,7 @@ public class AnnouncementsActivity extends Activity {
 	Button newActivityButton;
 	Button journal;
 	Button message;
+	int s;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -84,6 +85,7 @@ public class AnnouncementsActivity extends Activity {
 		});*/
     }
 
+   
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_menu_button, menu);
