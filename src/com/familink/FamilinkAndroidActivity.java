@@ -32,7 +32,7 @@ public class FamilinkAndroidActivity extends Activity {
         group_id = this.getIntent().getIntExtra("GROUP_ID", 0);
         
         title = (TextView) findViewById(R.id.titulo);
-        title.setText("Journal");
+        title.setText(R.string.journal_title);
                 
         if(group_id == 0) {
         	Intent intent = new Intent(getBaseContext(), SelectGroupActivity.class);

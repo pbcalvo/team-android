@@ -61,20 +61,20 @@ public class JournalActivity extends Activity {
 				
 				View view = getLayoutInflater().inflate( R.layout.observation_form, null );				
 				AlertDialog.Builder builder = new AlertDialog.Builder(JournalActivity.this);
-			    builder.setTitle("Add a new observation");
+			    builder.setTitle(R.string.obs_new);
 			    builder.setView(view);
 
-			    builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+			    builder.setPositiveButton(R.string.string_add, new DialogInterface.OnClickListener() {
 
 			        public void onClick(DialogInterface dialog, int which) {
 			            // Do nothing but close the dialog
 			            dialog.dismiss();
-			            Toast.makeText(JournalActivity.this, "Observation created", Toast.LENGTH_SHORT).show();
+			            Toast.makeText(JournalActivity.this, R.string.obs_done, Toast.LENGTH_SHORT).show();
 			        }
 
 			    });
 
-			    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			    builder.setNegativeButton(R.string.string_cancel, new DialogInterface.OnClickListener() {
 
 			        @Override
 			        public void onClick(DialogInterface dialog, int which) {
@@ -97,20 +97,20 @@ public class JournalActivity extends Activity {
 				
 				View view = getLayoutInflater().inflate( R.layout.meals_form, null );				
 				AlertDialog.Builder builder = new AlertDialog.Builder(JournalActivity.this);
-			    builder.setTitle("Add a new meal");
+			    builder.setTitle(R.string.meal_new);
 			    builder.setView(view);
 
-			    builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+			    builder.setPositiveButton(R.string.string_add, new DialogInterface.OnClickListener() {
 
 			        public void onClick(DialogInterface dialog, int which) {
 			            // Do nothing but close the dialog
 			            dialog.dismiss();
-			            Toast.makeText(JournalActivity.this, "Meal created", Toast.LENGTH_SHORT).show();
+			            Toast.makeText(JournalActivity.this, R.string.meal_done, Toast.LENGTH_SHORT).show();
 			        }
 
 			    });
 
-			    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			    builder.setNegativeButton(R.string.string_cancel, new DialogInterface.OnClickListener() {
 
 			        @Override
 			        public void onClick(DialogInterface dialog, int which) {
@@ -133,20 +133,20 @@ public class JournalActivity extends Activity {
 				
 				View view = getLayoutInflater().inflate( R.layout.nap_form, null );				
 				AlertDialog.Builder builder = new AlertDialog.Builder(JournalActivity.this);
-			    builder.setTitle("Add a new nap");
+			    builder.setTitle(R.string.nap_new);
 			    builder.setView(view);
 
-			    builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+			    builder.setPositiveButton(R.string.string_add, new DialogInterface.OnClickListener() {
 
 			        public void onClick(DialogInterface dialog, int which) {
 			            // Do nothing but close the dialog
 			            dialog.dismiss();
-			            Toast.makeText(JournalActivity.this, "Nap created", Toast.LENGTH_SHORT).show();
+			            Toast.makeText(JournalActivity.this, R.string.nap_done, Toast.LENGTH_SHORT).show();
 			        }
 
 			    });
 
-			    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			    builder.setNegativeButton(R.string.string_cancel, new DialogInterface.OnClickListener() {
 
 			        @Override
 			        public void onClick(DialogInterface dialog, int which) {
@@ -169,20 +169,20 @@ public class JournalActivity extends Activity {
 				
 				View view = getLayoutInflater().inflate( R.layout.depo_form, null );				
 				AlertDialog.Builder builder = new AlertDialog.Builder(JournalActivity.this);
-			    builder.setTitle("Add a new deposition");
+			    builder.setTitle(R.string.stool_new);
 			    builder.setView(view);
 
-			    builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+			    builder.setPositiveButton(R.string.string_add, new DialogInterface.OnClickListener() {
 
 			        public void onClick(DialogInterface dialog, int which) {
 			            // Do nothing but close the dialog
 			            dialog.dismiss();
-			            Toast.makeText(JournalActivity.this, "Deposition created", Toast.LENGTH_SHORT).show();
+			            Toast.makeText(JournalActivity.this, R.string.stool_new, Toast.LENGTH_SHORT).show();
 			        }
 
 			    });
 
-			    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			    builder.setNegativeButton(R.string.string_cancel, new DialogInterface.OnClickListener() {
 
 			        @Override
 			        public void onClick(DialogInterface dialog, int which) {

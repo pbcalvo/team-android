@@ -29,22 +29,22 @@ public class AnnouncementsActivity extends Activity {
 			public void onClick(View v) {
 				View view = getLayoutInflater().inflate( R.layout.new_announcement, null );
 				AlertDialog.Builder builder = new AlertDialog.Builder(AnnouncementsActivity.this);
-				builder.setTitle("Create a new announcement");
+				builder.setTitle(R.string.announcement_new);
 			    builder.setView(view);
 			    
-			    builder.setPositiveButton("Send", new DialogInterface.OnClickListener() {
+			    builder.setPositiveButton(R.string.string_send, new DialogInterface.OnClickListener() {
 					
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						dialog.dismiss();
-			            Toast.makeText(AnnouncementsActivity.this, "Announcement sent", Toast.LENGTH_SHORT).show();
+			            Toast.makeText(AnnouncementsActivity.this, R.string.announcement_sent, Toast.LENGTH_SHORT).show();
 						
 					}
 				});
 			    
 			    
 			    
-			    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			    builder.setNegativeButton(R.string.string_cancel, new DialogInterface.OnClickListener() {
 					
 					@Override
 					public void onClick(DialogInterface dialog, int which) {

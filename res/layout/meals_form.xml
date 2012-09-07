@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Meal"
+        android:text="@string/meal_title"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TableLayout
@@ -34,31 +34,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Breakfast" />
+                android:text="@string/string_breakfast" />
 
             <RadioButton
                 android:id="@+id/snack_am"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Snack AM" />
+                android:text="@string/string_snackam" />
 
             <RadioButton
                 android:id="@+id/lunch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lunch" />
+                android:text="@string/string_lunch" />
             
             <RadioButton
                 android:id="@+id/snack_pm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Snack PM" />
+                android:text="@string/string_snackpm" />
             
             <RadioButton
                 android:id="@+id/dinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dinner" />
+                android:text="@string/string_dinner" />
         </RadioGroup>
 
     </TableLayout>
