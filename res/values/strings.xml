@@ -20,6 +20,7 @@
     <string name="obs_title">Observations</string>
     
     <!-- Meal String Resources -->
+    <string name="meal_detail">Want to specify a meal?</string>
     <string name="meal_done">Meal Info Added</string>
     <string name="meal_new">Add a New Meal</string>
     <string name="meal_title">Meals</string>
@@ -51,6 +52,8 @@
     
     <!-- General Resources -->
     <string name="string_add">Add</string>
+    <string name="string_all">All</string>
+    <string name="string_alev">Almost Everything</string>
     
     <string name="string_breakfast">Breakfast</string>
     
@@ -61,8 +64,16 @@
     <string name="string_dry">Dry</string>
     
     <string name="string_fluid">Fluid</string>
+    <string name="string_from">From</string>
+    
+    <string name="string_justtasted">Just Tasted it</string>
+    
+    <string name="string_half">Half</string>
+    <string name="string_howmuch">How Much?</string>
     
     <string name="string_lunch">Lunch</string>
+    
+    <string name="string_message">Message</string>
     
     <string name="string_new">New</string>
     <string name="string_normal">Normal</string>
@@ -76,9 +87,14 @@
     <string name="string_snackpm">Snack PM</string>
     <string name="string_soft">Soft</string>
     <string name="string_solid">Solid</string>
+    <string name="string_something">Something</string>
+    <string name="string_subject">Subject</string>
     
     <string name="string_time">Time</string>
+    <string name="string_to">To</string>
+    
     
     <string name="kid_select">Select a Kid</string>
+    <string name="group_select">Select Group</string>
 
 </resources>

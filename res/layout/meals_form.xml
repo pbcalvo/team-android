@@ -66,7 +66,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="How much?"
+        android:text="@string/string_howmuch"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TableLayout 
@@ -84,31 +84,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Just tasted it" />
+                android:text="@string/string_justtasted" />
 
             <RadioButton
                 android:id="@+id/something"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Something" />
+                android:text="@string/string_something" />
 
             <RadioButton
                 android:id="@+id/half"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Half" />
+                android:text="@string/string_half" />
             
             <RadioButton
                 android:id="@+id/almost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Almost everything" />
+                android:text="@string/string_alev" />
             
             <RadioButton
                 android:id="@+id/all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="All" />
+                android:text="@string/string_all" />
         </RadioGroup>
     
     </TableLayout>
@@ -116,7 +116,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Want to specify a meal?"
+        android:text="@string/meal_detail"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
     <TableLayout 
@@ -130,7 +130,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Subway" >
-        		</EditText>
+        </EditText>
 
         </TableLayout>
     
