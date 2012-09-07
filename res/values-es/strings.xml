@@ -20,81 +20,85 @@
     <string name="obs_title">Observaciones</string>
     
     <!-- Meal String Resources -->
-    <string name="meal_detail">Want to specify a meal?</string>
-    <string name="meal_done">Meal Info Added</string>
-    <string name="meal_new">Add a New Meal</string>
-    <string name="meal_title">Meals</string>
+    <string name="meal_detail">¿Quiere especificar comida?</string>
+    <string name="meal_done">Info de Comida Agregada </string>
+    <string name="meal_new">Agregar Nueva Info de Comida</string>
+    <string name="meal_title">Comidas</string>
     
     <!-- Nap String Resouces -->
-    <string name="nap_done">Nap Info Added</string>
-    <string name="nap_new">Add a New Nap</string>
-    <string name="nap_title">Naps</string>
+    <string name="nap_done">Info de Siesta Agregada</string>
+    <string name="nap_new">Agregar Nueva Info de Siesta</string>
+    <string name="nap_title">Siestas</string>
     
     <!-- Stool String Resouces -->
-    <string name="stool_done">Stool Info Added</string>
-    <string name="stool_new">Add New Stool Info</string>
-    <string name="stool_title">Stool</string>
+    <string name="stool_done">Info de Deposición Agregada</string>
+    <string name="stool_new">Agregar Nueva Info de Deposición</string>
+    <string name="stool_title">Deposiciones</string>
     
     <!-- Message String Resources -->
-    <string name="message_title">Messages</string>
+    <string name="message_title">Mensajes</string>
   
     <!-- Announcement String Resources -->
-    <string name="announcement_new">Add a New Announcement</string>
-    <string name="announcement_sent">Announcement Sent</string>
-    <string name="announcement_title">Announcements</string>
+    <string name="announcement_new">Agregar Nuevo Anuncio</string>
+    <string name="announcement_sent">Anuncion Enviado</string>
+    <string name="announcement_title">Anuncios</string>
     
     <!-- Calendar String Resources -->
-    <string name="calendar_title">Calendar</string>
+    <string name="calendar_title">Calendario</string>
     
     <!-- Comments String Resources -->
-    <string name="comments_title">Comments</string>
-    <string name="comments_new">Add a Comment</string>
+    <string name="comments_title">Comentarios</string>
+    <string name="comments_new">Agregar un Comentario</string>
     
     <!-- General Resources -->
-    <string name="string_add">Add</string>
-    <string name="string_all">All</string>
-    <string name="string_alev">Almost Everything</string>
+    <string name="string_add">Agregar</string>
+    <string name="string_all">Todo</string>
+    <string name="string_alev">Casi Todo</string>
     
-    <string name="string_breakfast">Breakfast</string>
+    <string name="string_breakfast">Desayuno</string>
     
-    <string name="string_cancel">Cancel</string>
-    <string name="string_characteristic">Characteristic</string>
+    <string name="string_campus">Campus</string>
+    <string name="string_cancel">Cancelar</string>
+    <string name="string_characteristic">Característica</string>
     
-    <string name="string_dinner">Dinner</string>
-    <string name="string_dry">Dry</string>
+    <string name="string_dinner">Cena</string>
+    <string name="string_dry">Seca</string>
     
-    <string name="string_fluid">Fluid</string>
-    <string name="string_from">From</string>
+    <string name="string_fluid">Fluida</string>
+    <string name="string_from">Desde</string>
     
-    <string name="string_justtasted">Just Tasted it</string>
+    <string name="string_groups">Grupos</string>
     
-    <string name="string_half">Half</string>
-    <string name="string_howmuch">How Much?</string>
+    <string name="string_half">Mitad</string>
+    <string name="string_howmuch">¿Cuánto Comió?</string>
     
-    <string name="string_lunch">Lunch</string>
+    <string name="string_justtasted">Apenas la probó</string>
     
-    <string name="string_message">Message</string>
+    <string name="string_logout">Cerrar Sesión</string>
+    <string name="string_lunch">Almuerzo</string>
     
-    <string name="string_new">New</string>
+    <string name="string_message">Mensaje</string>
+    
+    <string name="string_new">Nuevo</string>
     <string name="string_normal">Normal</string>
     
-    <string name="string_other">Other</string>
+    <string name="string_other">Otra</string>
     
-    <string name="string_pee">Pee</string>
+    <string name="string_pee">Pipí</string>
     
-    <string name="string_send">Send</string>
-    <string name="string_snackam">Snack AM</string>
-    <string name="string_snackpm">Snack PM</string>
-    <string name="string_soft">Soft</string>
-    <string name="string_solid">Solid</string>
-    <string name="string_something">Something</string>
-    <string name="string_subject">Subject</string>
+    <string name="string_send">Enviar</string>
+    <string name="string_snackam">Snack Mañana</string>
+    <string name="string_snackpm">Snack Tarde</string>
+    <string name="string_soft">Blanda</string>
+    <string name="string_solid">Sólida</string>
+    <string name="string_something">Algo</string>
+    <string name="string_subject">Asunto</string>
     
-    <string name="string_time">Time</string>
-    <string name="string_to">To</string>
+    <string name="string_time">Hora</string>
+    <string name="string_to">Hasta</string>
     
     
-    <string name="kid_select">Select a Kid</string>
-    <string name="group_select">Select Group</string>
+    <string name="kid_select">Seleccione un Niño</string>
+    <string name="group_select">Seleccione un Grupo</string>
 
 </resources>
