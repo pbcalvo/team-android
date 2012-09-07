@@ -251,7 +251,7 @@
     
     <Button 
     android:id="@+id/message_button"
-    android:text="@string/messages_title"
+    android:text="@string/message_title"
     android:layout_height="fill_parent"
     android:layout_width="0dip"
     android:layout_weight="1"
@@ -259,7 +259,7 @@
     
     <Button 
     android:id="@+id/announcement_button"
-    android:text="@string/announcements_title"
+    android:text="@string/announcement_title"
     android:layout_height="fill_parent"
     android:layout_weight="1"
     android:layout_width="0dip"

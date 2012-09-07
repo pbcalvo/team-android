@@ -16,7 +16,7 @@
     android:id="@+id/titulo"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="@string/messages_title"
+    android:text="@string/message_title"
     android:textSize="20dp"/>
        
     </RelativeLayout>
