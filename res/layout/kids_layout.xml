@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+    
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:clickable="true"
+                   android:layout_margin="4sp"
+                   android:paddingBottom="1sp"
+                   android:paddingRight="1sp"
+                   android:background="@color/black_mate" >
+               <RelativeLayout
+                   android:id="@+id/relative_kid"
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:clickable="true"
+                   android:padding="5sp"
+                   android:background="@color/white_mate" >
+              	 <ImageButton 
+              	   android:id="@+id/picture_kid"
+                   android:layout_width="60dp"
+                   android:layout_height="60dp"
+                   android:layout_alignParentTop="true"
+                   android:layout_alignParentLeft="true"/>
+              	 <TextView 
+              	   android:id="@+id/name_kid"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_toRightOf="@+id/picture_kid"
+                   android:layout_alignParentTop="true"
+                   android:textColor="@color/grey_mate"
+                   android:textSize="15sp"/>
+               	<TextView 
+               	   android:id="@+id/parents_kid"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_toRightOf="@+id/picture_kid"
+                   android:layout_below="@+id/name_kid"
+                   android:textColor="@color/grey_mate"
+                   android:textSize="12sp"/>
+               	<ImageView 
+               	   android:layout_width="wrap_content"
+               	   android:layout_height="wrap_content"
+               	   android:background="@drawable/chevron"
+               	   android:layout_alignParentRight="true"
+               	   android:layout_centerVertical="true"/>
+               	</RelativeLayout>
+ </RelativeLayout>

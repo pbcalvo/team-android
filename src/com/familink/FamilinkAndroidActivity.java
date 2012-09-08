@@ -1,14 +1,20 @@
 package com.familink;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 
 public class FamilinkAndroidActivity extends Activity {
     /** Called when the activity is first created. */
@@ -23,11 +29,22 @@ public class FamilinkAndroidActivity extends Activity {
 	Button announcement;
 	Button calendar;
 	RelativeLayout kid1;
+	LinearLayout kidsTableLayout;
+	List<String> parents;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+        
+        kidsTableLayout = (LinearLayout)findViewById(R.id.kidsList);
+        
+        parents = new ArrayList<String>();
+        parents.add("Papa");
+        parents.add("Mama");
+        
+        addKid("Amanda Solis");
+        
         
         group_id = this.getIntent().getIntExtra("GROUP_ID", 0);
         
@@ -84,21 +101,6 @@ public class FamilinkAndroidActivity extends Activity {
 			}
 		});
         
-        kid1 = (RelativeLayout) findViewById(R.id.relative_kid1);
-        kid1.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(getBaseContext(), JournalActivity.class);
-				intent.putExtra("KID_ID", 1);
-				intent.putExtra("KID_NAME", "Amanda Solis");
-				intent.putExtra("GROUP_ID", group_id);
-				startActivityForResult(intent,0);
-				finish();
-			}
-		});
-        
     }
     
     @Override
@@ -126,7 +128,23 @@ public class FamilinkAndroidActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    } 
+    }
+    
+    public void addKid(String name){
+    	
+    	View view = getLayoutInflater().inflate(R.layout.kids_layout, null);
+	
+		//RelativeLayout relative_kid = (RelativeLayout) findViewById(R.id.relative_kid);
+		//relative_kid.getId();
+		//relative_kid.setId("@+id/relative_kid"+id);
+		TextView name_kid = (TextView) view.findViewById(R.id.name_kid);
+		name_kid.setText(name);
+		TextView parents_kid = (TextView) view.findViewById(R.id.parents_kid);
+		parents_kid.setText(parents.get(0)+" y "+parents.get(1));
+
+		kidsTableLayout.addView(view,0, new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+    	
+    }
     
     
     
