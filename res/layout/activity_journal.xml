@@ -3,13 +3,15 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="vertical"
   android:layout_width="match_parent"
-  android:layout_height="match_parent">
+  android:layout_height="match_parent"
+  android:background="@color/grey_background">
   
    <RelativeLayout
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
        android:layout_weight="1"
-       android:orientation="horizontal" >
+       android:orientation="horizontal"
+       android:background="@color/grey" >
        <Button 
            android:id="@+id/back_group"
            android:layout_centerVertical="true"
@@ -24,7 +26,8 @@
     	android:layout_centerHorizontal="true"
     	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
-    	android:textSize="20dp"/>
+    	android:textSize="20dp"
+        android:textColor="@color/black_mate"/>
        
     	</RelativeLayout>
     	
@@ -32,7 +35,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="9"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="5sp">
     	
         
     	
@@ -53,21 +57,33 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:text="@string/obs_title"
-                   android:textSize="15sp"/>
+                   android:textSize="20sp"
+                   android:textColor="@color/grey_mate"/>
+               <RelativeLayout
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:clickable="true"
+                   android:layout_margin="4sp"
+                   android:paddingBottom="1sp"
+                   android:paddingRight="1sp"
+                   android:background="@color/black_mate" >
                <RelativeLayout
                    android:id="@+id/obs1"
                    android:layout_width="fill_parent"
                    android:layout_height="wrap_content"
                    android:clickable="true"
-                   android:layout_marginLeft="10sp" >
+                   android:padding="5sp"
+                   android:background="@color/white_mate" >
                    <TextView 
                        android:id="@+id/obs_content1"
-                       android:layout_width="fill_parent"
+                       android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:lines="2"
+                       android:maxLines="2"
                        android:ellipsize="marquee"
-                       android:textSize="12sp"
+                       android:textSize="15sp"
                        android:layout_alignParentTop="true"
+                   	   android:textColor="@color/grey_mate"
+                   	   android:layout_marginRight="22sp"
                        android:text="Amanda se porto muy bien hoy, comió toda su comida y hizo nuevos amigos. Su comportamiento ha mejorado mucho desde la semana pasada. Excelente trabajo en casa."
                        />  
                    <TextView 
@@ -76,23 +92,43 @@
                        android:layout_height="wrap_content"    
                        android:layout_below="@+id/obs_content1"
                        android:layout_alignParentRight="true"
+                       android:textColor="@color/grey_mate"
                        android:text="14:35, today"
-                       android:textSize="10sp" />     
+                       android:layout_marginRight="22sp"
+                       android:textSize="12sp" />   
+                   <ImageView 
+               	   android:layout_width="wrap_content"
+               	   android:layout_height="wrap_content"
+               	   android:background="@drawable/pencil"
+               	   android:layout_alignParentRight="true"
+               	   android:layout_alignParentTop="true"/>  
                </RelativeLayout>
+               </RelativeLayout>
+               <RelativeLayout
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:clickable="true"
+                   android:layout_margin="4sp"
+                   android:paddingBottom="1sp"
+                   android:paddingRight="1sp"
+                   android:background="@color/black_mate"  >
                <RelativeLayout
                    android:id="@+id/obs2"
                    android:layout_width="fill_parent"
                    android:layout_height="wrap_content"
                    android:clickable="true"
-                   android:layout_marginLeft="10sp" >
+                   android:padding="5sp"
+                   android:background="@color/white_mate">
                    <TextView 
                        android:id="@+id/obs_content2"
-                       android:layout_width="fill_parent"
+                       android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:lines="2"
+                       android:maxLines="2"
                        android:ellipsize="marquee"
-                       android:textSize="12sp"
+                       android:textSize="15sp"
                        android:layout_alignParentTop="true"
+                       android:layout_marginRight="22sp"
+                       android:textColor="@color/grey_mate"
                        android:text="Amanda no se portó muy bien hoy, se pelio con una compañera y tuvo un comportamiento bastante egoísta. Les pediía que porfavor trabajen esto durante el fin de semana. Gracias"
                        />  
                    <TextView 
@@ -101,8 +137,17 @@
                        android:layout_height="wrap_content"    
                        android:layout_below="@+id/obs_content2"
                        android:layout_alignParentRight="true"
+                       android:textColor="@color/grey_mate"
                        android:text="16:35, Fri 31 Ago"
-                       android:textSize="10sp"       />      
+                       android:layout_marginRight="22sp"
+                       android:textSize="12sp"       />    
+                    <ImageView 
+               	   android:layout_width="wrap_content"
+               	   android:layout_height="wrap_content"
+               	   android:background="@drawable/pencil"
+               	   android:layout_alignParentRight="true"
+               	   android:layout_alignParentTop="true"/>     
+               </RelativeLayout>
                </RelativeLayout>
                <RelativeLayout 
                    android:id="@+id/obs_add"
@@ -110,11 +155,11 @@
                    android:layout_height="wrap_content">
                    <Button 
                        android:id="@+id/obs_add_button"
-                       android:layout_centerInParent="true"
+                       android:layout_centerVertical="true"
                        android:layout_width="wrap_content"
-                       android:layout_height="30sp"
                        android:text="@string/obs_new"
-                       android:textSize="10sp"/>
+                       android:layout_height="40sp"
+                       android:textSize="15sp"/>
                    
                </RelativeLayout>
            	</TableLayout>
