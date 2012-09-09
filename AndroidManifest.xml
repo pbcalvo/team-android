@@ -41,6 +41,10 @@
             android:name=".MessageKid"
             android:label="@string/title_activity_message_kid" >
         </activity>
+        <activity 
+            android:name=".CalendarActivity"
+            android:label= "@string/title_activity_calendar" >
+        </activity>
 		   
     </application>
 

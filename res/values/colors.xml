@@ -8,4 +8,11 @@
     <color name="white_mate">#E0E0E0</color>
     <color name="black_mate">#1F1F1F</color>
     
+    <!-- Added for Calendar View -->
+   	<color name="black">#000000</color>
+	<color name="symptom_color_selected">#003366</color>
+	<color name="reaction_color_selected">#003366</color>
+	<color name="static_text_color">#003366</color>
+	<color name="journal_entry_listitem_text_color">#003366</color>
+	<color name="note_text_disabled">#333333</color>
 </resources>

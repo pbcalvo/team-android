@@ -10,6 +10,7 @@
     <string name="title_activity_announcements">AnnouncementsActivity</string>
     <string name="title_activity_message">MessageActivity</string>
     <string name="title_activity_message_kid">MessageKid</string>
+    <string name="title_activity_calendar">CalendarActivity</string>
     
     <!-- Journal String Resources -->
     <string name="journal_title">Journal</string>   
