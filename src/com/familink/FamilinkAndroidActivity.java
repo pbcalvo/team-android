@@ -23,6 +23,7 @@ public class FamilinkAndroidActivity extends Activity {
 	private int kid_id;
 	
 	TextView prueba; 
+	String name_string;
 	TextView title;
 	Button journal;
 	Button message;
@@ -47,6 +48,7 @@ public class FamilinkAndroidActivity extends Activity {
         parents.add("Mama");
         
         addKid("Amanda Solis");
+        addKid("Juan Perez");
         
         
         group_id = this.getIntent().getIntExtra("GROUP_ID", 0);
@@ -134,27 +136,34 @@ public class FamilinkAndroidActivity extends Activity {
     }
     
     public void addKid(String name){
+    	name_string = name;
     	
     	View view = getLayoutInflater().inflate(R.layout.kids_layout, null);
+    	
 		TextView name_kid = (TextView) view.findViewById(R.id.name_kid);
 		name_kid.setText(name);
+		
 		TextView parents_kid = (TextView) view.findViewById(R.id.parents_kid);
 		parents_kid.setText(parents.get(0)+" y "+parents.get(1));
+		
 		RelativeLayout layout_kid = (RelativeLayout) view.findViewById(R.id.relative_kid);
 		layout_kid.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(getBaseContext(), MessageKid.class);
+				Intent intent = new Intent(getBaseContext(), JournalActivity.class);
 				intent.putExtra("KID_ID", 1);
-				intent.putExtra("KID_NAME", "Amanda Solis");
+				intent.putExtra("KID_NAME", name_string);
 				intent.putExtra("GROUP_ID", group_id);
 				startActivityForResult(intent,0);
 				finish();
 			}
 		});
+		
 		layout_buttons.add(layout_kid);
+		
+		
 		kidsTableLayout.addView(view,0, new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
     	
     }
