@@ -2,8 +2,6 @@ package familink_model;
 
 import java.util.Calendar;
 
-enum StoolCharacteristics {NORMAL, SOLID, SOFT, FLUID, PEE, DRY, OTHER};
-
 public class Stool extends Entry {
 	
 	private StoolCharacteristics stoolCharacteristic;
