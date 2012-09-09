@@ -44,6 +44,11 @@ public class CalendarActivity extends Activity implements OnClickListener {
 	private int month, year;
 	private final DateFormat dateFormatter = new DateFormat();
 	private static final String dateTemplate = "MMMM yyyy";
+	
+	private String currentSelectedDate = ""; 
+	private boolean selectedDate = false; 
+	private LinearLayout button_layout; 
+	private Button previousGridcell = null; 
 
 	/** Called when the activity is first created. */
 	@Override
@@ -71,7 +76,7 @@ public class CalendarActivity extends Activity implements OnClickListener {
 
 		calendarView = (GridView) this.findViewById(R.id.calendar);
 		
-		LinearLayout button_layout = (LinearLayout) this.findViewById(R.id.button_layout);
+		this.button_layout = (LinearLayout) this.findViewById(R.id.button_layout);
 		button_layout.setVisibility(View.INVISIBLE); 
 
 		// Initialised
@@ -148,6 +153,8 @@ public class CalendarActivity extends Activity implements OnClickListener {
 		private TextView num_events_per_day;
 		private final HashMap eventsPerMonthMap;
 		private final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MMM-yyyy");
+		
+		private View cv; 
 		
 
 		// Days in Current Month
@@ -321,6 +328,7 @@ public class CalendarActivity extends Activity implements OnClickListener {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			View row = convertView;
+			this.cv = convertView; 
 			if (row == null) {
 				LayoutInflater inflater = (LayoutInflater) _context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 				row = inflater.inflate(R.layout.calendar_day_gridcell, parent, false);
@@ -363,10 +371,29 @@ public class CalendarActivity extends Activity implements OnClickListener {
 		}
 		
 		//Método cuando se selecciona una fecha. 
+		/**TODO
+		 * Hacer que se seleccione la fecha, se guarde y se envíe al siguiente paso.**/
 		@Override
 		public void onClick(View view) {
-			String date_month_year = (String) view.getTag();
-			selectedDayMonthYearButton.setText("Selected: " + date_month_year);
+			
+			String date_month_year = (String) view.getTag();  
+			
+			currentSelectedDate = date_month_year; 
+			selectedDate = true; 
+			//selectedDayMonthYearButton.setText("Selected: " + date_month_year);
+			
+			button_layout.setVisibility(View.VISIBLE);
+			
+			gridcell = (Button) cv.findViewById(R.id.calendar_day_gridcell);
+			
+			if(previousGridcell == null) {
+				previousGridcell = this.gridcell; 
+			}
+			else {
+				previousGridcell.setTextColor(Color.WHITE); 
+			}
+			
+			this.gridcell.setTextColor(Color.RED);
 
 			try {
 				Date parsedDate = dateFormatter.parse(date_month_year);
