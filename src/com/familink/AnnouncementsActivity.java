@@ -81,7 +81,7 @@ public class AnnouncementsActivity extends Activity {
 
 		});
 
-		message = (Button) findViewById(R.id.messages_button);
+		message = (Button) findViewById(R.id.message_button);
 		message.setOnClickListener(new View.OnClickListener() {
 
 			@Override

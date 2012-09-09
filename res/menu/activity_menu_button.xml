@@ -1,22 +1,32 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
     <!-- Falta determinar los showAsAction de los item -->
-    
-    <group android:id="@+id/group_selection">
-    	<item android:id="@+id/campus_menu_button"
-		android:title="@string/string_campus"
-		android:icon="@drawable/icon" />
-		<item android:id="@+id/groups_menu_button"
-		android:title="@string/string_groups"
-		android:icon="@drawable/icon" />
-	</group>
-	<group android:id="@+id/group_settings">
-	    <item android:id="@+id/settings_menu_button"
-		android:title="@string/menu_settings"
-		android:icon="@drawable/icon" />
-		<item android:id="@+id/logout_menu_button"
-		android:title="@string/string_logout"
-		android:icon="@drawable/icon" />
-	</group>
-	
+
+    <group android:id="@+id/group_selection" >
+        <item
+            android:id="@+id/campus_menu_button"
+            android:icon="@drawable/icon"
+            android:title="@string/string_campus"/>
+        <item
+            android:id="@+id/groups_menu_button"
+            android:icon="@drawable/icon"
+            android:title="@string/string_groups"/>
+    </group>
+    <group android:id="@+id/group_settings" >
+        <item
+            android:id="@+id/settings_menu_button"
+            android:icon="@drawable/icon"
+            android:title="@string/menu_settings"/>
+        <item
+            android:id="@+id/logout_menu_button"
+            android:icon="@drawable/icon"
+            android:title="@string/string_logout"/>
+    </group>
+    <group android:id="@+id/testing_internet" >
+        <item
+            android:id="@+id/testing_internet_button"
+            android:icon="@drawable/icon"
+            android:title="Testing Internet"/>
+    </group>
+
 </menu>
