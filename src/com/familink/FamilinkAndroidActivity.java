@@ -31,11 +31,14 @@ public class FamilinkAndroidActivity extends Activity {
 	RelativeLayout kid1;
 	LinearLayout kidsTableLayout;
 	List<String> parents;
+	List<RelativeLayout> layout_buttons;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+        
+        layout_buttons = new ArrayList<RelativeLayout>();
         
         kidsTableLayout = (LinearLayout)findViewById(R.id.kidsList);
         
@@ -133,15 +136,25 @@ public class FamilinkAndroidActivity extends Activity {
     public void addKid(String name){
     	
     	View view = getLayoutInflater().inflate(R.layout.kids_layout, null);
-	
-		//RelativeLayout relative_kid = (RelativeLayout) findViewById(R.id.relative_kid);
-		//relative_kid.getId();
-		//relative_kid.setId("@+id/relative_kid"+id);
 		TextView name_kid = (TextView) view.findViewById(R.id.name_kid);
 		name_kid.setText(name);
 		TextView parents_kid = (TextView) view.findViewById(R.id.parents_kid);
 		parents_kid.setText(parents.get(0)+" y "+parents.get(1));
-
+		RelativeLayout layout_kid = (RelativeLayout) view.findViewById(R.id.relative_kid);
+		layout_kid.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(getBaseContext(), MessageKid.class);
+				intent.putExtra("KID_ID", 1);
+				intent.putExtra("KID_NAME", "Amanda Solis");
+				intent.putExtra("GROUP_ID", group_id);
+				startActivityForResult(intent,0);
+				finish();
+			}
+		});
+		layout_buttons.add(layout_kid);
 		kidsTableLayout.addView(view,0, new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
     	
     }
