@@ -29,6 +29,7 @@
     <string name="nap_done">Nap Info Added</string>
     <string name="nap_new">Add a New Nap</string>
     <string name="nap_title">Naps</string>
+    <string name="nap_from">Sleeping from</string>
     
     <!-- Stool String Resouces -->
     <string name="stool_done">Stool Info Added</string>
@@ -37,6 +38,7 @@
     
     <!-- Message String Resources -->
     <string name="message_title">Messages</string>
+    <string name="insert_message">Insert message</string>
   
     <!-- Announcement String Resources -->
     <string name="announcement_new">Add a New Announcement</string>
