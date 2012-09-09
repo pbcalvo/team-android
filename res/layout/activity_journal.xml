@@ -1,393 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:background="@color/grey_background">
-  
-   <RelativeLayout
-       android:layout_width="fill_parent"
-       android:layout_height="wrap_content"
-       android:layout_weight="1"
-       android:orientation="horizontal"
-       android:background="@color/grey" >
-       <Button 
-           android:id="@+id/back_group"
-           android:layout_centerVertical="true"
-           android:layout_alignParentLeft="true"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Group 1"
-           android:textSize="10sp" />       
-    	
-       <TextView 
-    	android:id="@+id/titulo"
-    	android:layout_centerHorizontal="true"
-    	android:layout_centerVertical="true"
-    	android:layout_width="wrap_content"
-    	android:layout_height="wrap_content"
-    	android:textSize="20dp"
-        android:textColor="@color/black_mate"/>
-       
-    	</RelativeLayout>
-    	
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_background"
+    android:orientation="vertical" >
+
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0sp"
+        android:layout_weight="1"
+        android:background="@color/grey"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/back_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Group 1"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black_mate"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0sp"
+        android:layout_margin="5sp"
         android:layout_weight="9"
-        android:orientation="vertical"
-        android:layout_margin="5sp">
-    	
-        
-    	
-       <ScrollView
-           android:layout_below="@+id/title_kid"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
-           <TableLayout 
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content">
-           
-           	<TableLayout 
-               android:id="@+id/observations_layout"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"               
-               >
-               <TextView 
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="@string/obs_title"
-                   android:textSize="20sp"
-                   android:textColor="@color/grey_mate"/>
-               <RelativeLayout
-                   android:layout_width="fill_parent"
-                   android:layout_height="wrap_content"
-                   android:clickable="true"
-                   android:layout_margin="4sp"
-                   android:paddingBottom="1sp"
-                   android:paddingRight="1sp"
-                   android:background="@color/black_mate" >
-               <RelativeLayout
-                   android:id="@+id/obs1"
-                   android:layout_width="fill_parent"
-                   android:layout_height="wrap_content"
-                   android:clickable="true"
-                   android:padding="5sp"
-                   android:background="@color/white_mate" >
-                   <TextView 
-                       android:id="@+id/obs_content1"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:maxLines="2"
-                       android:ellipsize="marquee"
-                       android:textSize="15sp"
-                       android:layout_alignParentTop="true"
-                   	   android:textColor="@color/grey_mate"
-                   	   android:layout_marginRight="22sp"
-                       android:text="Amanda se porto muy bien hoy, comió toda su comida y hizo nuevos amigos. Su comportamiento ha mejorado mucho desde la semana pasada. Excelente trabajo en casa."
-                       />  
-                   <TextView 
-                       android:id="@+id/obs_date1"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"    
-                       android:layout_below="@+id/obs_content1"
-                       android:layout_alignParentRight="true"
-                       android:textColor="@color/grey_mate"
-                       android:text="14:35, today"
-                       android:layout_marginRight="22sp"
-                       android:textSize="12sp" />   
-                   <ImageView 
-               	   android:layout_width="wrap_content"
-               	   android:layout_height="wrap_content"
-               	   android:background="@drawable/pencil"
-               	   android:layout_alignParentRight="true"
-               	   android:layout_alignParentTop="true"/>  
-               </RelativeLayout>
-               </RelativeLayout>
-               <RelativeLayout
-                   android:layout_width="fill_parent"
-                   android:layout_height="wrap_content"
-                   android:clickable="true"
-                   android:layout_margin="4sp"
-                   android:paddingBottom="1sp"
-                   android:paddingRight="1sp"
-                   android:background="@color/black_mate"  >
-               <RelativeLayout
-                   android:id="@+id/obs2"
-                   android:layout_width="fill_parent"
-                   android:layout_height="wrap_content"
-                   android:clickable="true"
-                   android:padding="5sp"
-                   android:background="@color/white_mate">
-                   <TextView 
-                       android:id="@+id/obs_content2"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:maxLines="2"
-                       android:ellipsize="marquee"
-                       android:textSize="15sp"
-                       android:layout_alignParentTop="true"
-                       android:layout_marginRight="22sp"
-                       android:textColor="@color/grey_mate"
-                       android:text="Amanda no se portó muy bien hoy, se pelio con una compañera y tuvo un comportamiento bastante egoísta. Les pediía que porfavor trabajen esto durante el fin de semana. Gracias"
-                       />  
-                   <TextView 
-                       android:id="@+id/obs_date2"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"    
-                       android:layout_below="@+id/obs_content2"
-                       android:layout_alignParentRight="true"
-                       android:textColor="@color/grey_mate"
-                       android:text="16:35, Fri 31 Ago"
-                       android:layout_marginRight="22sp"
-                       android:textSize="12sp"       />    
-                    <ImageView 
-               	   android:layout_width="wrap_content"
-               	   android:layout_height="wrap_content"
-               	   android:background="@drawable/pencil"
-               	   android:layout_alignParentRight="true"
-               	   android:layout_alignParentTop="true"/>     
-               </RelativeLayout>
-               </RelativeLayout>
-               <RelativeLayout 
-                   android:id="@+id/obs_add"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content">
-                   <Button 
-                       android:id="@+id/obs_add_button"
-                       android:layout_centerVertical="true"
-                       android:layout_width="wrap_content"
-                       android:text="@string/obs_new"
-                       android:layout_height="40sp"
-                       android:textSize="15sp"/>
-                   
-               </RelativeLayout>
-           	</TableLayout>
-           	
-           	<TableLayout 
-               android:id="@+id/meals_layout"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"               
-               >
-               <TextView 
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="@string/meal_title"
-                   android:textSize="15sp"/>
-               <RelativeLayout
-                   android:id="@+id/meals1"
-                   android:layout_width="fill_parent"
-                   android:layout_height="wrap_content"
-                   android:clickable="true"
-                   android:layout_marginLeft="10sp" >
-                   <TextView 
-                       android:id="@+id/meals_content1"
-                       android:layout_width="fill_parent"
-                       android:layout_height="wrap_content"
-                       android:lines="1"
-                       android:ellipsize="marquee"
-                       android:textSize="12sp"
-                       android:layout_alignParentTop="true"
-                       android:text="Papilla de manzana"
-                       />  
-                   <TextView 
-                       android:id="@+id/meals_date1"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"    
-                       android:layout_below="@+id/meals_content1"
-                       android:layout_alignParentRight="true"
-                       android:text="Breakfast"
-                       android:textSize="10sp" />     
-               </RelativeLayout>
-               <RelativeLayout
-                   android:id="@+id/meals2"
-                   android:layout_width="fill_parent"
-                   android:layout_height="wrap_content"
-                   android:clickable="true"
-                   android:layout_marginLeft="10sp" >
-                   <TextView 
-                       android:id="@+id/meals_content2"
-                       android:layout_width="fill_parent"
-                       android:layout_height="wrap_content"
-                       android:lines="1"
-                       android:ellipsize="marquee"
-                       android:textSize="12sp"
-                       android:layout_alignParentTop="true"
-                       android:text="Arroz con pollo"
-                       />  
-                   <TextView 
-                       android:id="@+id/meals_date2"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"    
-                       android:layout_below="@+id/meals_content2"
-                       android:layout_alignParentRight="true"
-                       android:text="Lunch"
-                       android:textSize="10sp" />      
-               </RelativeLayout>
-               <RelativeLayout 
-                   android:id="@+id/meals_add"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content">
-                   <Button 
-                       android:id="@+id/meals_add_button"
-                       android:layout_centerInParent="true"
-                       android:layout_width="wrap_content"
-                       android:layout_height="30sp"
-                       android:text="@string/meal_new"
-                       android:textSize="10sp"/>
-                   
-               </RelativeLayout>
-           	</TableLayout>
-           	
-           	<TableLayout 
-               android:id="@+id/naps_layout"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"               
-               >
-               <TextView 
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="@string/nap_title"
-                   android:textSize="15sp"/>
-               <RelativeLayout
-                   android:id="@+id/naps1"
-                   android:layout_width="fill_parent"
-                   android:layout_height="wrap_content"
-                   android:clickable="true"
-                   android:layout_marginLeft="10sp" >
-                   <TextView 
-                       android:id="@+id/naps_content1"
-                       android:layout_width="fill_parent"
-                       android:layout_height="wrap_content"
-                       android:lines="1"
-                       android:ellipsize="marquee"
-                       android:textSize="12sp"
-                       android:layout_alignParentTop="true"
-                       android:text="2 horas"
-                       />  
-                   <TextView 
-                       android:id="@+id/naps_date1"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"    
-                       android:layout_below="@+id/naps_content1"
-                       android:layout_alignParentRight="true"
-                       android:text="15:00, today"
-                       android:textSize="10sp" />     
-               </RelativeLayout>
-               <RelativeLayout 
-                   android:id="@+id/naps_add"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content">
-                   <Button 
-                       android:id="@+id/naps_add_button"
-                       android:layout_centerInParent="true"
-                       android:layout_width="wrap_content"
-                       android:layout_height="30sp"
-                       android:text="@string/nap_new"
-                       android:textSize="10sp"/>
-                   
-               </RelativeLayout>
-              
-           	</TableLayout>
-           	
-           	<TableLayout 
-               android:id="@+id/depos_layout"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"               
-               >
-               <TextView 
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="@string/stool_title"
-                   android:textSize="15sp"/>
-               <RelativeLayout
-                   android:id="@+id/depos1"
-                   android:layout_width="fill_parent"
-                   android:layout_height="wrap_content"
-                   android:clickable="true"
-                   android:layout_marginLeft="10sp" >
-                   <TextView 
-                       android:id="@+id/depos_content1"
-                       android:layout_width="fill_parent"
-                       android:layout_height="wrap_content"
-                       android:lines="1"
-                       android:ellipsize="marquee"
-                       android:textSize="12sp"
-                       android:layout_alignParentTop="true"
-                       android:text="Normal"
-                       />  
-                   <TextView 
-                       android:id="@+id/dapos_date1"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"    
-                       android:layout_below="@+id/depos_content1"
-                       android:layout_alignParentRight="true"
-                       android:text="11:00, today"
-                       android:textSize="10sp" />     
-               </RelativeLayout>
-               <RelativeLayout 
-                   android:id="@+id/depos_add"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content">
-                   <Button 
-                       android:id="@+id/depos_add_button"
-                       android:layout_centerInParent="true"
-                       android:layout_width="wrap_content"
-                       android:layout_height="30sp"
-                       android:text="@string/stool_new"
-                       android:textSize="10sp"/>
-                   
-               </RelativeLayout>
-              
-           	</TableLayout>
-           	
-           </TableLayout>
-           
-       </ScrollView>
-    
-    	
-    	
-    	</RelativeLayout>
-    	
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_kid" >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TableLayout
+                    android:id="@+id/observations_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/obs_title"
+                        android:textColor="@color/grey_mate"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:id="@+id/observation_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/obs_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <Button
+                            android:id="@+id/obs_add_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40sp"
+                            android:layout_centerVertical="true"
+                            android:text="@string/obs_new"
+                            android:textColor="@color/grey_mate"
+                            android:textSize="15sp" />
+                    </RelativeLayout>
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/meals_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/meal_title"
+                        android:textColor="@color/grey_mate"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:id="@+id/meals_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/meals_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <Button
+                            android:id="@+id/meals_add_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40sp"
+                            android:layout_centerVertical="true"
+                            android:text="@string/meal_new"
+                            android:textColor="@color/grey_mate"
+                            android:textSize="15sp" />
+                    </RelativeLayout>
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/naps_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nap_title"
+                        android:textColor="@color/grey_mate"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:id="@+id/naps_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/naps_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <Button
+                            android:id="@+id/naps_add_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40sp"
+                            android:layout_centerVertical="true"
+                            android:text="@string/nap_new"
+                            android:textColor="@color/grey_mate"
+                            android:textSize="15sp" />
+                    </RelativeLayout>
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/stools_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stool_title"
+                        android:textColor="@color/grey_mate"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:id="@+id/stools_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/stools_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <Button
+                            android:id="@+id/stools_add_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40sp"
+                            android:layout_centerVertical="true"
+                            android:text="@string/stool_new"
+                            android:textColor="@color/grey_mate"
+                            android:textSize="15sp" />
+                    </RelativeLayout>
+                </TableLayout>
+            </TableLayout>
+        </ScrollView>
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0sp"
         android:layout_weight="2"
         android:orientation="horizontal" >
-    	    		
-    		<Button 
-    			android:id="@+id/journal_button"
-    			android:text="@string/journal_title"
-    			android:layout_height="fill_parent"
-    			android:layout_width="0dip"
-    			android:layout_weight="1"
-    		/>
-    		
-    		<Button 
-    			android:id="@+id/message_button"
-    			android:text="@string/message_title"
-    			android:layout_height="fill_parent"
-    			android:layout_width="0dip"
-    			android:layout_weight="1"
-    		/>
-    		
-    		<Button 
-    			android:id="@+id/announcement_button"
-    			android:text="@string/announcement_title"
-    			android:layout_height="fill_parent"
-    			android:layout_weight="1"
-    			android:layout_width="0dip"
-    		/>
-    		
-    		<Button 
-    			android:id="@+id/calendar_button"
-    			android:text="@string/calendar_title"
-    			android:layout_width="0dip"
-    			android:layout_height="fill_parent"
-    			android:layout_weight="1"
-    		/>
-    		
-    	</LinearLayout>
-    
+
+        <Button
+            android:id="@+id/journal_button"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="@string/journal_title" />
+
+        <Button
+            android:id="@+id/message_button"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="@string/message_title" />
+
+        <Button
+            android:id="@+id/announcement_button"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="@string/announcement_title" />
+
+        <Button
+            android:id="@+id/calendar_button"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="@string/calendar_title" />
+    </LinearLayout>
+
 </LinearLayout>

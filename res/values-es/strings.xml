@@ -29,6 +29,7 @@
     <string name="nap_done">Info de Siesta Agregada</string>
     <string name="nap_new">Agregar Nueva Info de Siesta</string>
     <string name="nap_title">Siestas</string>
+    <string name="nap_from">Durmiendo desde las</string>
     
     <!-- Stool String Resouces -->
     <string name="stool_done">Info de Deposición Agregada</string>
@@ -37,6 +38,7 @@
     
     <!-- Message String Resources -->
     <string name="message_title">Mensajes</string>
+    <string name="insert_message">Inserte un mensaje</string>
   
     <!-- Announcement String Resources -->
     <string name="announcement_new">Agregar Nuevo Anuncio</string>

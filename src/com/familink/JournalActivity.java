@@ -1,5 +1,9 @@
 package com.familink;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -9,201 +13,284 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class JournalActivity extends Activity {
-	
+
 	TextView title;
 	int kid_id, group_id;
 	String kid_name;
-	Button back_group, new_obs, new_meal, new_nap, new_depo, add_obs, cancel_obs;
+	Button back_group, new_obs, new_meal, new_nap, new_stool, add_obs,
+			cancel_obs;
 	Dialog dialog;
 	Button journal;
 	Button message;
 	Button announcement;
+	Boolean observation, meal, nap, stool;
+	LinearLayout obsLinearLayout, mealsLinearLayout, napsLinearLayout,
+			stoolsLinearLayout;
+	List<RelativeLayout> layout_buttons;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_journal);
-        
-               
-        kid_id = this.getIntent().getIntExtra("KID_ID", 0);
-        kid_name = this.getIntent().getStringExtra("KID_NAME");
-        group_id = this.getIntent().getIntExtra("GROUP_ID", 0);
-        
-        title = (TextView) findViewById(R.id.titulo);
-        title.setText(kid_name);
-        
-        back_group = (Button) findViewById(R.id.back_group);
-        back_group.setOnClickListener(new View.OnClickListener() {
-			
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_journal);
+
+		layout_buttons = new ArrayList<RelativeLayout>();
+
+		obsLinearLayout = (LinearLayout) findViewById(R.id.observation_list);
+		mealsLinearLayout = (LinearLayout) findViewById(R.id.meals_list);
+		napsLinearLayout = (LinearLayout) findViewById(R.id.naps_list);
+		stoolsLinearLayout = (LinearLayout) findViewById(R.id.stools_list);
+
+		observation = true;
+		meal = true;
+		nap = true;
+		stool = true;
+
+		kid_id = this.getIntent().getIntExtra("KID_ID", 0);
+		kid_name = this.getIntent().getStringExtra("KID_NAME");
+		group_id = this.getIntent().getIntExtra("GROUP_ID", 0);
+
+		title = (TextView) findViewById(R.id.titulo);
+		title.setText(kid_name);
+
+		back_group = (Button) findViewById(R.id.back_group);
+		back_group.setOnClickListener(new View.OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(getBaseContext(), FamilinkAndroidActivity.class);
+				Intent intent = new Intent(getBaseContext(),
+						FamilinkAndroidActivity.class);
 				intent.putExtra("GROUP_ID", group_id);
-				startActivityForResult(intent,0);
+				startActivityForResult(intent, 0);
 				finish();
 			}
 		});
-        
-        
-		
-        new_obs = (Button) findViewById(R.id.obs_add_button);
-        new_obs.setOnClickListener(new View.OnClickListener() {
+
+		if (observation) {
+
+			TableLayout observation_visibility = (TableLayout) findViewById(R.id.observations_layout);
+			observation_visibility.setVisibility(0);
+
+			addObs("La ni–a se porto bien", Calendar.getInstance());
+			addObs("La ni–a ahora se porto mal", Calendar.getInstance());
+
+			new_obs = (Button) findViewById(R.id.obs_add_button);
+			new_obs.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+
+					View view = getLayoutInflater().inflate(
+							R.layout.observation_form, null);
+					AlertDialog.Builder builder = new AlertDialog.Builder(
+							JournalActivity.this);
+					builder.setTitle(R.string.obs_new);
+					builder.setView(view);
+
+					builder.setPositiveButton(R.string.string_add,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									// Do nothing but close the dialog
+									dialog.dismiss();
+									Toast.makeText(JournalActivity.this,
+											R.string.obs_done,
+											Toast.LENGTH_SHORT).show();
+								}
+
+							});
+
+					builder.setNegativeButton(R.string.string_cancel,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									// Do nothing
+									dialog.dismiss();
+								}
+							});
+
+					builder.create().show();
+
+				}
+			});
+		}
+
+		if (meal) {
+
+			TableLayout meal_visibility = (TableLayout) findViewById(R.id.meals_layout);
+			meal_visibility.setVisibility(0);
 			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
-				View view = getLayoutInflater().inflate( R.layout.observation_form, null );				
-				AlertDialog.Builder builder = new AlertDialog.Builder(JournalActivity.this);
-			    builder.setTitle(R.string.obs_new);
-			    builder.setView(view);
+			addMeals("Colaci—n AM", "Casi todo", "Chocman");
+			addMeals("Almuerzo", "Algo", "Carne con Arroz");
 
-			    builder.setPositiveButton(R.string.string_add, new DialogInterface.OnClickListener() {
+			new_meal = (Button) findViewById(R.id.meals_add_button);
+			new_meal.setOnClickListener(new View.OnClickListener() {
 
-			        @Override
-					public void onClick(DialogInterface dialog, int which) {
-			            // Do nothing but close the dialog
-			            dialog.dismiss();
-			            Toast.makeText(JournalActivity.this, R.string.obs_done, Toast.LENGTH_SHORT).show();
-			        }
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
 
-			    });
+					View view = getLayoutInflater().inflate(
+							R.layout.meals_form, null);
+					AlertDialog.Builder builder = new AlertDialog.Builder(
+							JournalActivity.this);
+					builder.setTitle(R.string.meal_new);
+					builder.setView(view);
 
-			    builder.setNegativeButton(R.string.string_cancel, new DialogInterface.OnClickListener() {
+					builder.setPositiveButton(R.string.string_add,
+							new DialogInterface.OnClickListener() {
 
-			        @Override
-			        public void onClick(DialogInterface dialog, int which) {
-			            // Do nothing
-			            dialog.dismiss();
-			        }
-			    });
-			    
-			    builder.create().show();
-				
-			}
-		});
-        
-        new_meal = (Button) findViewById(R.id.meals_add_button);
-        new_meal.setOnClickListener(new View.OnClickListener() {
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									// Do nothing but close the dialog
+									dialog.dismiss();
+									Toast.makeText(JournalActivity.this,
+											R.string.meal_done,
+											Toast.LENGTH_SHORT).show();
+								}
+
+							});
+
+					builder.setNegativeButton(R.string.string_cancel,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									// Do nothing
+									dialog.dismiss();
+								}
+							});
+
+					builder.create().show();
+
+				}
+			});
+		}
+
+		if (nap) {
 			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
-				View view = getLayoutInflater().inflate( R.layout.meals_form, null );				
-				AlertDialog.Builder builder = new AlertDialog.Builder(JournalActivity.this);
-			    builder.setTitle(R.string.meal_new);
-			    builder.setView(view);
-
-			    builder.setPositiveButton(R.string.string_add, new DialogInterface.OnClickListener() {
-
-			        @Override
-					public void onClick(DialogInterface dialog, int which) {
-			            // Do nothing but close the dialog
-			            dialog.dismiss();
-			            Toast.makeText(JournalActivity.this, R.string.meal_done, Toast.LENGTH_SHORT).show();
-			        }
-
-			    });
-
-			    builder.setNegativeButton(R.string.string_cancel, new DialogInterface.OnClickListener() {
-
-			        @Override
-			        public void onClick(DialogInterface dialog, int which) {
-			            // Do nothing
-			            dialog.dismiss();
-			        }
-			    });
-			    
-			    builder.create().show();
-				
-			}
-		});
-        
-        new_nap = (Button) findViewById(R.id.naps_add_button);
-        new_nap.setOnClickListener(new View.OnClickListener() {
+			addNaps(Calendar.getInstance());
 			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
-				View view = getLayoutInflater().inflate( R.layout.nap_form, null );				
-				AlertDialog.Builder builder = new AlertDialog.Builder(JournalActivity.this);
-			    builder.setTitle(R.string.nap_new);
-			    builder.setView(view);
+			TableLayout nap_visibility = (TableLayout) findViewById(R.id.naps_layout);
+			nap_visibility.setVisibility(0);
 
-			    builder.setPositiveButton(R.string.string_add, new DialogInterface.OnClickListener() {
+			new_nap = (Button) findViewById(R.id.naps_add_button);
+			new_nap.setOnClickListener(new View.OnClickListener() {
 
-			        @Override
-					public void onClick(DialogInterface dialog, int which) {
-			            // Do nothing but close the dialog
-			            dialog.dismiss();
-			            Toast.makeText(JournalActivity.this, R.string.nap_done, Toast.LENGTH_SHORT).show();
-			        }
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
 
-			    });
+					View view = getLayoutInflater().inflate(R.layout.nap_form,
+							null);
+					AlertDialog.Builder builder = new AlertDialog.Builder(
+							JournalActivity.this);
+					builder.setTitle(R.string.nap_new);
+					builder.setView(view);
 
-			    builder.setNegativeButton(R.string.string_cancel, new DialogInterface.OnClickListener() {
+					builder.setPositiveButton(R.string.string_add,
+							new DialogInterface.OnClickListener() {
 
-			        @Override
-			        public void onClick(DialogInterface dialog, int which) {
-			            // Do nothing
-			            dialog.dismiss();
-			        }
-			    });
-			    
-			    builder.create().show();
-				
-			}
-		});
-        
-        new_depo = (Button) findViewById(R.id.depos_add_button);
-        new_depo.setOnClickListener(new View.OnClickListener() {
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									// Do nothing but close the dialog
+									dialog.dismiss();
+									Toast.makeText(JournalActivity.this,
+											R.string.nap_done,
+											Toast.LENGTH_SHORT).show();
+								}
+
+							});
+
+					builder.setNegativeButton(R.string.string_cancel,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									// Do nothing
+									dialog.dismiss();
+								}
+							});
+
+					builder.create().show();
+
+				}
+			});
+		}
+
+		if (stool) {
+
+			addStools(Calendar.getInstance(), "normal", "Sin olor");
 			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
-				View view = getLayoutInflater().inflate( R.layout.depo_form, null );				
-				AlertDialog.Builder builder = new AlertDialog.Builder(JournalActivity.this);
-			    builder.setTitle(R.string.stool_new);
-			    builder.setView(view);
+			TableLayout stool_visibility = (TableLayout) findViewById(R.id.stools_layout);
+			stool_visibility.setVisibility(0);
+			new_stool = (Button) findViewById(R.id.stools_add_button);
+			new_stool.setOnClickListener(new View.OnClickListener() {
 
-			    builder.setPositiveButton(R.string.string_add, new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
 
-			        @Override
-					public void onClick(DialogInterface dialog, int which) {
-			            // Do nothing but close the dialog
-			            dialog.dismiss();
-			            Toast.makeText(JournalActivity.this, R.string.stool_new, Toast.LENGTH_SHORT).show();
-			        }
+					View view = getLayoutInflater().inflate(
+							R.layout.stool_form, null);
+					AlertDialog.Builder builder = new AlertDialog.Builder(
+							JournalActivity.this);
+					builder.setTitle(R.string.stool_new);
+					builder.setView(view);
 
-			    });
+					builder.setPositiveButton(R.string.string_add,
+							new DialogInterface.OnClickListener() {
 
-			    builder.setNegativeButton(R.string.string_cancel, new DialogInterface.OnClickListener() {
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									// Do nothing but close the dialog
+									dialog.dismiss();
+									Toast.makeText(JournalActivity.this,
+											R.string.stool_new,
+											Toast.LENGTH_SHORT).show();
+								}
 
-			        @Override
-			        public void onClick(DialogInterface dialog, int which) {
-			            // Do nothing
-			            dialog.dismiss();
-			        }
-			    });
-			    
-			    builder.create().show();
-				
-			}
-		});
-        
-        
-        message = (Button) findViewById(R.id.message_button);
-        message.setOnClickListener(new View.OnClickListener() {
-			
+							});
+
+					builder.setNegativeButton(R.string.string_cancel,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									// Do nothing
+									dialog.dismiss();
+								}
+							});
+
+					builder.create().show();
+
+				}
+			});
+		}
+
+		message = (Button) findViewById(R.id.message_button);
+		message.setOnClickListener(new View.OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -211,52 +298,181 @@ public class JournalActivity extends Activity {
 				intent.putExtra("KID_ID", 1);
 				intent.putExtra("KID_NAME", "Amanda Solis");
 				intent.putExtra("GROUP_ID", group_id);
-				startActivityForResult(intent,0);
+				startActivityForResult(intent, 0);
 				finish();
 			}
-			
-			
+
 		});
-        
-        announcement = (Button) findViewById(R.id.announcement_button);
-        announcement.setOnClickListener(new View.OnClickListener() {
-			
+
+		announcement = (Button) findViewById(R.id.announcement_button);
+		announcement.setOnClickListener(new View.OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(getBaseContext(), AnnouncementsActivity.class);
-	        	startActivityForResult(intent, 0);
-	        	finish();
+				Intent intent = new Intent(getBaseContext(),
+						AnnouncementsActivity.class);
+				startActivityForResult(intent, 0);
+				finish();
 			}
 		});
-       
-        
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_menu_button, menu);
-        return true;
-    }
-    
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.groups_menu_button:
-                //Volver a la selección de grupos.
-                return true;
-            case R.id.campus_menu_button:
-                //Idem al anterior.
-                return true;
-            case R.id.settings_menu_button:
-            	//Ventana de setting, aún no implementada.
-            	return true; 
-            case R.id.logout_menu_button:
-            	//Logout, tampoco implementado.
-            	return true; 
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    } 
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.activity_menu_button, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle item selection
+		switch (item.getItemId()) {
+		case R.id.groups_menu_button:
+			// Volver a la selección de grupos.
+			return true;
+		case R.id.campus_menu_button:
+			// Idem al anterior.
+			return true;
+		case R.id.settings_menu_button:
+			// Ventana de setting, aún no implementada.
+			return true;
+		case R.id.logout_menu_button:
+			// Logout, tampoco implementado.
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+
+	public void addObs(String content, Calendar date) {
+
+		View view = getLayoutInflater().inflate(R.layout.observation_layout,
+				null);
+
+		TextView content_text = (TextView) view.findViewById(R.id.obs_content);
+		content_text.setText(content);
+
+		TextView date_text = (TextView) view.findViewById(R.id.obs_date);
+		date_text.setText(date.HOUR + ":" + date.MINUTE + ", today");
+
+		RelativeLayout obs_layout = (RelativeLayout) view
+				.findViewById(R.id.obs);
+		obs_layout.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				/*
+				 * Intent intent = new Intent(getBaseContext(),
+				 * JournalActivity.class); startActivityForResult(intent, 0);
+				 * finish();
+				 */
+			}
+		});
+
+		layout_buttons.add(obs_layout);
+
+		obsLinearLayout.addView(view, 0, new LayoutParams(
+				LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+
+	}
+
+	public void addMeals(String type, String much, String description) {
+
+		View view = getLayoutInflater().inflate(R.layout.meals_layout, null);
+
+		TextView content_text = (TextView) view.findViewById(R.id.meal_content);
+		content_text.setText(type + ": " + much);
+
+		TextView description_text = (TextView) view
+				.findViewById(R.id.meal_description);
+		description_text.setText(description);
+
+		RelativeLayout meals_layout = (RelativeLayout) view
+				.findViewById(R.id.meals);
+		meals_layout.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				/*
+				 * Intent intent = new Intent(getBaseContext(),
+				 * JournalActivity.class); startActivityForResult(intent, 0);
+				 * finish();
+				 */
+			}
+		});
+
+		layout_buttons.add(meals_layout);
+
+		mealsLinearLayout.addView(view, 0, new LayoutParams(
+				LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+
+	}
+
+	public void addNaps(Calendar date) {
+
+		View view = getLayoutInflater().inflate(R.layout.naps_layout, null);
+
+		TextView content_text = (TextView) view.findViewById(R.id.nap_content);
+		content_text.setText(JournalActivity.this.getResources().getString (R.string.nap_from) + " " + date.HOUR + ":"
+				+ date.MINUTE);
+
+		RelativeLayout naps_layout = (RelativeLayout) view
+				.findViewById(R.id.naps);
+		naps_layout.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				/*
+				 * Intent intent = new Intent(getBaseContext(),
+				 * JournalActivity.class); startActivityForResult(intent, 0);
+				 * finish();
+				 */
+			}
+		});
+
+		layout_buttons.add(naps_layout);
+
+		napsLinearLayout.addView(view, 0, new LayoutParams(
+				LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+
+	}
+
+	public void addStools(Calendar date, String content, String description) {
+
+		View view = getLayoutInflater().inflate(R.layout.stools_layout, null);
+
+		TextView content_text = (TextView) view
+				.findViewById(R.id.stools_content);
+		content_text.setText(date.HOUR + ":" + date.MINUTE + " - " + content);
+
+		TextView description_text = (TextView) view
+				.findViewById(R.id.stools_description);
+		description_text.setText(description);
+
+		RelativeLayout stool_layout = (RelativeLayout) view
+				.findViewById(R.id.stools);
+		stool_layout.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				/*
+				 * Intent intent = new Intent(getBaseContext(),
+				 * JournalActivity.class); startActivityForResult(intent, 0);
+				 * finish();
+				 */
+			}
+		});
+
+		layout_buttons.add(stool_layout);
+
+		stoolsLinearLayout.addView(view, 0, new LayoutParams(
+				LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+
+	}
 }
