@@ -21,6 +21,7 @@ public class MessageKid extends Activity {
 	Button message;
 	Button announcement;
 	Button calendar;
+	Button back_group;
 	TextView title;
 	LinearLayout messagesLinearLayout;
 	
@@ -40,6 +41,20 @@ public class MessageKid extends Activity {
 		
 		addChat("", "Amanda Solis", "Hola que tal?", Calendar.getInstance());
 		addChat("", "Jenny Bravo", "Hola bien y ud?", Calendar.getInstance());
+		
+		back_group = (Button) findViewById(R.id.back_group);
+		back_group.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(getBaseContext(),
+						MessageActivity.class);
+				intent.putExtra("GROUP_ID", group_id);
+				startActivityForResult(intent, 0);
+				finish();
+			}
+		});
         
         message = (Button) findViewById(R.id.message_button);
         message.setOnClickListener(new View.OnClickListener() {

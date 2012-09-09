@@ -128,6 +128,11 @@ public class FamilinkAndroidActivity extends Activity {
 		case R.id.logout_menu_button:
 			// Logout, tampoco implementado.
 			return true;
+		case R.id.testing_internet_button:
+			Intent intent = new Intent(getBaseContext(),
+					WebActivity.class);
+			startActivityForResult(intent, 0);
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
