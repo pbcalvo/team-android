@@ -17,6 +17,8 @@ import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
@@ -383,5 +385,35 @@ public class CalendarActivity extends Activity implements OnClickListener {
 			return currentWeekDay;
 		}
 	}
+	
+	/* Métodos agregados por PameCal */
+	
+	//Método Menú.
+	 @Override
+	    public boolean onCreateOptionsMenu(Menu menu) {
+	        getMenuInflater().inflate(R.menu.activity_menu_button, menu);
+	        return true;
+	    }
+	    
+	    @Override
+	    public boolean onOptionsItemSelected(MenuItem item) {
+	        // Handle item selection
+	        switch (item.getItemId()) {
+	            case R.id.groups_menu_button:
+	                //Volver a la selección de grupos.
+	                return true;
+	            case R.id.campus_menu_button:
+	                //Idem al anterior.
+	                return true;
+	            case R.id.settings_menu_button:
+	            	//Ventana de setting, aún no implementada.
+	            	return true; 
+	            case R.id.logout_menu_button:
+	            	//Logout, tampoco implementado.
+	            	return true; 
+	            default:
+	                return super.onOptionsItemSelected(item);
+	        }
+	    }
 	
 }
