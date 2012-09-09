@@ -45,6 +45,9 @@
     
     <!-- Calendar String Resources -->
     <string name="calendar_title">Calendario</string>
+    <string name="calendar_button_day_view">Actividades del Día</string>
+    <string name="calendar_button_add_event">Agregar Evento</string>
+    <string name="calendar_button_add_task">Agregar Tarea</string>
     
     <!-- Comments String Resources -->
     <string name="comments_title">Comentarios</string>

@@ -66,4 +66,45 @@
 		android:layout_height="wrap_content">
 	</GridView>
 
+	<ScrollView 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+		
+	    <LinearLayout
+	    android:layout_gravity="center"
+	    android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+	
+    <!-- Mostrar Día -->
+    <Button
+        android:id="@+id/button_calendar_day_view"
+		android:textColor="#FFFFFF"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+        android:text="@string/calendar_button_day_view">
+    </Button>
+    
+    <!-- Agregar Evento -->
+    <Button 
+        android:id="@+id/button_add_event"
+        android:textColor="#FFFFFF"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+        android:text="@string/calendar_button_add_event">
+    </Button>
+    
+    <!-- Agregar Tarea -->
+    <Button 
+        android:id="@+id/button_add_task"
+        android:textColor="#FFFFFF"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+        android:text="@string/calendar_button_add_task">
+    </Button>
+    
+</LinearLayout>
+	</ScrollView>
+	
+	
 </LinearLayout>
