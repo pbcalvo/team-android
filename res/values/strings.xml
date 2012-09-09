@@ -10,5 +10,95 @@
     <string name="title_activity_announcements">AnnouncementsActivity</string>
     <string name="title_activity_message">MessageActivity</string>
     <string name="title_activity_message_kid">MessageKid</string>
+    
+    <!-- Journal String Resources -->
+    <string name="journal_title">Journal</string>   
+    
+    <!-- Observation String Resources -->
+    <string name="obs_done">Observation created</string>
+    <string name="obs_new">Add a New Observation</string>
+    <string name="obs_title">Observations</string>
+    
+    <!-- Meal String Resources -->
+    <string name="meal_detail">Want to specify a meal?</string>
+    <string name="meal_done">Meal Info Added</string>
+    <string name="meal_new">Add a New Meal</string>
+    <string name="meal_title">Meals</string>
+    
+    <!-- Nap String Resouces -->
+    <string name="nap_done">Nap Info Added</string>
+    <string name="nap_new">Add a New Nap</string>
+    <string name="nap_title">Naps</string>
+    
+    <!-- Stool String Resouces -->
+    <string name="stool_done">Stool Info Added</string>
+    <string name="stool_new">Add New Stool Info</string>
+    <string name="stool_title">Stool</string>
+    
+    <!-- Message String Resources -->
+    <string name="message_title">Messages</string>
+  
+    <!-- Announcement String Resources -->
+    <string name="announcement_new">Add a New Announcement</string>
+    <string name="announcement_sent">Announcement Sent</string>
+    <string name="announcement_title">Announcements</string>
+    
+    <!-- Calendar String Resources -->
+    <string name="calendar_title">Calendar</string>
+    
+    <!-- Comments String Resources -->
+    <string name="comments_title">Comments</string>
+    <string name="comments_new">Add a Comment</string>
+    
+    <!-- General Resources -->
+    <string name="string_add">Add</string>
+    <string name="string_all">All</string>
+    <string name="string_alev">Almost Everything</string>
+    
+    <string name="string_breakfast">Breakfast</string>
+    
+    <string name="string_campus">Campus</string>
+    <string name="string_cancel">Cancel</string>
+    <string name="string_characteristic">Characteristic</string>
+    
+    <string name="string_dinner">Dinner</string>
+    <string name="string_dry">Dry</string>
+    
+    <string name="string_fluid">Fluid</string>
+    <string name="string_from">From</string>
+    
+    <string name="string_groups">Campus</string>
+    
+    <string name="string_half">Half</string>
+    <string name="string_howmuch">How Much?</string>
+    
+    <string name="string_justtasted">Just Tasted it</string>
+    
+    <string name="string_logout">Log Out</string>
+    <string name="string_lunch">Lunch</string>
+    
+    <string name="string_message">Message</string>
+    
+    <string name="string_new">New</string>
+    <string name="string_normal">Normal</string>
+    
+    <string name="string_other">Other</string>
+    
+    <string name="string_pee">Pee</string>
+    
+    <string name="string_send">Send</string>
+    <string name="string_snackam">Snack AM</string>
+    <string name="string_snackpm">Snack PM</string>
+    <string name="string_soft">Soft</string>
+    <string name="string_solid">Solid</string>
+    <string name="string_something">Something</string>
+    <string name="string_subject">Subject</string>
+    
+    <string name="string_time">Time</string>
+    <string name="string_to">To</string>
+    
+    
+    <string name="kid_select">Select a Kid</string>
+    <string name="group_select">Select Group</string>
 
 </resources>

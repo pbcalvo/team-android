@@ -56,7 +56,7 @@
                <TextView 
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:text="Observations"
+                   android:text="@string/obs_title"
                    android:textSize="20sp"
                    android:textColor="@color/grey_mate"/>
                <RelativeLayout
@@ -157,8 +157,8 @@
                        android:id="@+id/obs_add_button"
                        android:layout_centerVertical="true"
                        android:layout_width="wrap_content"
+                       android:text="@string/obs_new"
                        android:layout_height="40sp"
-                       android:text="Add new observation"
                        android:textSize="15sp"/>
                    
                </RelativeLayout>
@@ -172,7 +172,7 @@
                <TextView 
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:text="Meals"
+                   android:text="@string/meal_title"
                    android:textSize="15sp"/>
                <RelativeLayout
                    android:id="@+id/meals1"
@@ -233,7 +233,7 @@
                        android:layout_centerInParent="true"
                        android:layout_width="wrap_content"
                        android:layout_height="30sp"
-                       android:text="Add new meal"
+                       android:text="@string/meal_new"
                        android:textSize="10sp"/>
                    
                </RelativeLayout>
@@ -247,7 +247,7 @@
                <TextView 
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:text="Naps"
+                   android:text="@string/nap_title"
                    android:textSize="15sp"/>
                <RelativeLayout
                    android:id="@+id/naps1"
@@ -283,7 +283,7 @@
                        android:layout_centerInParent="true"
                        android:layout_width="wrap_content"
                        android:layout_height="30sp"
-                       android:text="Add new nap"
+                       android:text="@string/nap_new"
                        android:textSize="10sp"/>
                    
                </RelativeLayout>
@@ -298,7 +298,7 @@
                <TextView 
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:text="Depositions"
+                   android:text="@string/stool_title"
                    android:textSize="15sp"/>
                <RelativeLayout
                    android:id="@+id/depos1"
@@ -334,7 +334,7 @@
                        android:layout_centerInParent="true"
                        android:layout_width="wrap_content"
                        android:layout_height="30sp"
-                       android:text="Add new deposition"
+                       android:text="@string/stool_new"
                        android:textSize="10sp"/>
                    
                </RelativeLayout>
@@ -357,7 +357,7 @@
     	    		
     		<Button 
     			android:id="@+id/journal_button"
-    			android:text="Journal"
+    			android:text="@string/journal_title"
     			android:layout_height="fill_parent"
     			android:layout_width="0dip"
     			android:layout_weight="1"
@@ -365,7 +365,7 @@
     		
     		<Button 
     			android:id="@+id/message_button"
-    			android:text="Message"
+    			android:text="@string/message_title"
     			android:layout_height="fill_parent"
     			android:layout_width="0dip"
     			android:layout_weight="1"
@@ -373,7 +373,7 @@
     		
     		<Button 
     			android:id="@+id/announcement_button"
-    			android:text="Announcement"
+    			android:text="@string/announcement_title"
     			android:layout_height="fill_parent"
     			android:layout_weight="1"
     			android:layout_width="0dip"
@@ -381,7 +381,7 @@
     		
     		<Button 
     			android:id="@+id/calendar_button"
-    			android:text="Calendar"
+    			android:text="@string/calendar_title"
     			android:layout_width="0dip"
     			android:layout_height="fill_parent"
     			android:layout_weight="1"
