@@ -4,8 +4,10 @@
 	android:orientation="vertical"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	android:background="@drawable/bg">
+	android:background="@drawable/bg"
+	android:weightSum="10">
 
+    <!--  La barra selected.
 	<Button
 		android:id="@+id/selectedDayMonthYear"
 		android:textColor="#FFFFFF"
@@ -15,12 +17,14 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content">
 	</Button>
+	-->
 
 	<LinearLayout
 		xmlns:android="http://schemas.android.com/apk/res/android"
 		android:orientation="horizontal"
 		android:layout_width="fill_parent"
-		android:layout_height="wrap_content">
+		android:layout_height="wrap_content"
+		android:layout_weight="1">
 
 		<ImageView
 			android:id="@+id/prevMonth"
@@ -47,8 +51,9 @@
 
 	<LinearLayout
 		android:layout_gravity="center"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content">
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:weightSum="1">
 		<ImageView
 			android:id="@+id/calendarheader"
 			android:src="@drawable/blue_bg_with_text"
@@ -63,18 +68,17 @@
 		android:id="@+id/calendar"
 		android:numColumns="7"
 		android:layout_width="fill_parent"
-		android:layout_height="wrap_content">
+		android:layout_height="wrap_content"
+		android:layout_weight="5" >
 	</GridView>
 
-	<ScrollView 
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content">
-		
-	    <LinearLayout
+	<LinearLayout
+	    android:id="@+id/button_layout"
 	    android:layout_gravity="center"
 	    android:orientation="vertical"
 		android:layout_width="fill_parent"
-		android:layout_height="wrap_content">
+		android:layout_height="wrap_content"
+		android:layout_weight="3">
 	
     <!-- Mostrar Día -->
     <Button
@@ -103,8 +107,6 @@
         android:text="@string/calendar_button_add_task">
     </Button>
     
-</LinearLayout>
-	</ScrollView>
-	
+</LinearLayout>	
 	
 </LinearLayout>

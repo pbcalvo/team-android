@@ -1,6 +1,5 @@
 package com.familink;
 
-import android.app.Activity;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -11,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -20,12 +20,13 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class CalendarActivity extends Activity implements OnClickListener {
@@ -56,8 +57,8 @@ public class CalendarActivity extends Activity implements OnClickListener {
 		year = _calendar.get(Calendar.YEAR);
 		Log.d(tag, "Calendar Instance:= " + "Month: " + month + " " + "Year: " + year);
 
-		selectedDayMonthYearButton = (Button) this.findViewById(R.id.selectedDayMonthYear);
-		selectedDayMonthYearButton.setText("Selected: ");
+		/*selectedDayMonthYearButton = (Button) this.findViewById(R.id.selectedDayMonthYear);
+		selectedDayMonthYearButton.setText("Selected: ");*/
 
 		prevMonth = (ImageView) this.findViewById(R.id.prevMonth);
 		prevMonth.setOnClickListener(this);
@@ -69,6 +70,9 @@ public class CalendarActivity extends Activity implements OnClickListener {
 		nextMonth.setOnClickListener(this);
 
 		calendarView = (GridView) this.findViewById(R.id.calendar);
+		
+		LinearLayout button_layout = (LinearLayout) this.findViewById(R.id.button_layout);
+		button_layout.setVisibility(View.INVISIBLE); 
 
 		// Initialised
 		adapter = new GridCellAdapter(getApplicationContext(), R.id.calendar_day_gridcell, month, year);
@@ -144,6 +148,7 @@ public class CalendarActivity extends Activity implements OnClickListener {
 		private TextView num_events_per_day;
 		private final HashMap eventsPerMonthMap;
 		private final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MMM-yyyy");
+		
 
 		// Days in Current Month
 		public GridCellAdapter(Context context, int textViewResourceId, int month, int year) {
@@ -356,6 +361,8 @@ public class CalendarActivity extends Activity implements OnClickListener {
 			}
 			return row;
 		}
+		
+		//Método cuando se selecciona una fecha. 
 		@Override
 		public void onClick(View view) {
 			String date_month_year = (String) view.getTag();
