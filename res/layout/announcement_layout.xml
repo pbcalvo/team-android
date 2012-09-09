@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4sp"
+    android:background="@color/black_mate"
+    android:clickable="true"
+    android:paddingBottom="1sp"
+    android:paddingRight="1sp" >
+
+        <RelativeLayout
+            android:id="@+id/announcement"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_mate"
+            android:clickable="true"
+            android:padding="5sp" >
+
+            <TextView
+                android:id="@+id/announcement_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="22sp"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:textColor="@color/grey_mate"
+                android:textSize="15sp" />
+            
+            <TextView
+                android:id="@+id/announcement_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/announcement_title"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:layout_marginRight="22sp"
+                android:textColor="@color/grey_mate"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/announcement_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/announcement_content"
+                android:textColor="@color/grey_mate"
+                android:layout_marginRight="22sp"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/chevron" />
+        </RelativeLayout>
+
+</RelativeLayout>
