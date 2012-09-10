@@ -16,12 +16,13 @@
 		android:layout_height="wrap_content">
 	</Button>
 	
+	<!-- Indica la cantidad de eventos en ese día. -->
 	<TextView
 		android:id="@+id/num_events_per_day"
 		style="@style/calendar_event_style"
 		android:layout_gravity="right"
 		android:layout_width="10dip"
-		android:layout_height="10dip">
+		android:layout_height="10dip" >
 	</TextView>
 	
 </RelativeLayout>

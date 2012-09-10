@@ -48,7 +48,7 @@ public class CalendarActivity extends Activity implements OnClickListener {
 	private String currentSelectedDate = ""; 
 	private boolean selectedDate = false; 
 	private LinearLayout button_layout; 
-	private Button previousGridcell = null; 
+	private String previouslySelectedDate = ""; 
 
 	/** Called when the activity is first created. */
 	@Override
@@ -80,6 +80,7 @@ public class CalendarActivity extends Activity implements OnClickListener {
 		button_layout.setVisibility(View.INVISIBLE); 
 
 		// Initialised
+		//Para este GridView se implementa el adapter GridCellAdapter.
 		adapter = new GridCellAdapter(getApplicationContext(), R.id.calendar_day_gridcell, month, year);
 		adapter.notifyDataSetChanged();
 		calendarView.setAdapter(adapter);
@@ -90,6 +91,7 @@ public class CalendarActivity extends Activity implements OnClickListener {
 	 * @param month
 	 * @param year
 	 */
+	//Se usa cuando se cambia de mes usando la barra superior.
 	private void setGridCellAdapterToDate(int month, int year)	{
 		adapter = new GridCellAdapter(getApplicationContext(), R.id.calendar_day_gridcell, month, year);
 		_calendar.set(year, month - 1, _calendar.get(Calendar.DAY_OF_MONTH));
@@ -135,6 +137,7 @@ public class CalendarActivity extends Activity implements OnClickListener {
 
 	// ///////////////////////////////////////////////////////////////////////////////////////
 	// Inner Class
+	//El adapter contiene todas las gridcell (las que tienen los días).
 	public class GridCellAdapter extends BaseAdapter implements OnClickListener
 	{
 		private static final String tag = "GridCellAdapter";
@@ -154,10 +157,11 @@ public class CalendarActivity extends Activity implements OnClickListener {
 		private final HashMap eventsPerMonthMap;
 		private final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MMM-yyyy");
 		
-		private View cv; 
+		private String previousCell = ""; 
 		
 
 		// Days in Current Month
+		//Constructor.
 		public GridCellAdapter(Context context, int textViewResourceId, int month, int year) {
 			super();
 			this._context = context;
@@ -328,7 +332,7 @@ public class CalendarActivity extends Activity implements OnClickListener {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			View row = convertView;
-			this.cv = convertView; 
+			
 			if (row == null) {
 				LayoutInflater inflater = (LayoutInflater) _context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 				row = inflater.inflate(R.layout.calendar_day_gridcell, parent, false);
@@ -376,25 +380,39 @@ public class CalendarActivity extends Activity implements OnClickListener {
 		@Override
 		public void onClick(View view) {
 			
+			//Recupero el tag del lugar que ha sido cliqueado.
 			String date_month_year = (String) view.getTag();  
 			
+			//Ahora si hay una fecha cliqueada, por lo que:
 			currentSelectedDate = date_month_year; 
-			selectedDate = true; 
-			//selectedDayMonthYearButton.setText("Selected: " + date_month_year);
 			
+			if(!selectedDate)
+				selectedDate = true; 
+			
+			//Hago visible los botones ahora que hay fecha seleccionada.
 			button_layout.setVisibility(View.VISIBLE);
 			
-			gridcell = (Button) cv.findViewById(R.id.calendar_day_gridcell);
+			//Esto es del código original.
+			//selectedDayMonthYearButton.setText("Selected: " + date_month_year);
 			
-			if(previousGridcell == null) {
-				previousGridcell = this.gridcell; 
-			}
-			else {
-				previousGridcell.setTextColor(Color.WHITE); 
+			//Veo si las fechas son del mismo mes y año.
+			String sub1 = currentSelectedDate; 
+			String sub2 = previouslySelectedDate; 
+			
+			if((sub1.substring(sub1.indexOf("-"))).equalsIgnoreCase(sub2.substring(sub2.indexOf("-")))) {
+				//Veo si hay una fecha anterior seleccionada, de ser así, la cambio de rojo a blanco.
+				if(!previouslySelectedDate.equals(""))
+				{
+					previouslySelectedDate.replace("RED", "WHITE");
+					//Acá se debe cambiar el elemento en la lista y guardar.
+				}
 			}
 			
-			this.gridcell.setTextColor(Color.RED);
-
+			if(previouslySelectedDate.equals(""))
+				previouslySelectedDate = currentSelectedDate; 
+			currentSelectedDate.replace("WHITE", "RED"); 
+			//Acá también tengo que guardar.				
+			
 			try {
 				Date parsedDate = dateFormatter.parse(date_month_year);
 				Log.d(tag, "Parsed Date: " + parsedDate.toString());
@@ -403,6 +421,9 @@ public class CalendarActivity extends Activity implements OnClickListener {
 			catch (ParseException e) {
 				e.printStackTrace();
 			}
+			
+			//Finalmente, actualizo la vista. 
+			this.notifyDataSetChanged(); 
 		}
 
 		public int getCurrentDayOfMonth() {
