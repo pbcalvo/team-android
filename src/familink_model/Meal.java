@@ -2,9 +2,6 @@ package familink_model;
 
 import java.util.Calendar;
 
-enum TypeMeal {BREAKFAST, SNACK_AM, LUNCH, SNACK_PM, DINNER};
-enum HowMuchEat {JUST_TASTED_IT, SOMETHING, HALF, ALMOST_EVERYTHING, ALL};
-
 public class Meal extends Entry {
 	
 	private TypeMeal typeMeal;
