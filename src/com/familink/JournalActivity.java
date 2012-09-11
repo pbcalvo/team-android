@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import familink_model.HowMuchEat;
+import familink_model.Kid;
 import familink_model.Meal;
 import familink_model.Nap;
 import familink_model.Observation;
@@ -47,7 +48,20 @@ public class JournalActivity extends Activity {
 			stoolsLinearLayout;
 	List<RelativeLayout> layout_buttons;
 	
+	List<Observation> observation_kid;
+	List<Meal> meal_kid;
+	List<Nap> nap_kid;
+	List<Stool> stool_kid;
+	
+	
+	
+	
 	View clickView;
+	Kid kid;
+	WebAPICommunicator api;
+	
+	
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -55,6 +69,10 @@ public class JournalActivity extends Activity {
 		setContentView(R.layout.activity_journal);
 
 		layout_buttons = new ArrayList<RelativeLayout>();
+		observation_kid = new ArrayList<Observation>();
+		meal_kid = new ArrayList<Meal>();
+		nap_kid = new ArrayList<Nap>();
+		stool_kid = new ArrayList<Stool>();
 
 		obsLinearLayout = (LinearLayout) findViewById(R.id.observation_list);
 		mealsLinearLayout = (LinearLayout) findViewById(R.id.meals_list);
@@ -65,11 +83,15 @@ public class JournalActivity extends Activity {
 		meal = true;
 		nap = true;
 		stool = true;
-
+		
 		kid_id = this.getIntent().getIntExtra("KID_ID", 0);
 		kid_name = this.getIntent().getStringExtra("KID_NAME");
 		group_id = this.getIntent().getIntExtra("GROUP_ID", 0);
-
+		
+		//Api para obtener los datos del niño seleccionado
+		api = WebAPICommunicator.getInstance();
+		kid = api.getKids(10).get(kid_id);
+		
 		title = (TextView) findViewById(R.id.titulo);
 		title.setText(kid_name);
 
@@ -92,8 +114,15 @@ public class JournalActivity extends Activity {
 			TableLayout observation_visibility = (TableLayout) findViewById(R.id.observations_layout);
 			observation_visibility.setVisibility(0);
 
-			addObs(new Observation(Calendar.getInstance(), "La niña se portó bien"));
-			addObs(new Observation(Calendar.getInstance(), "La niña ahora se porto mal"));
+			observation_kid = api.getObservations(kid.getId());
+			for(int o = 0; o< observation_kid.size(); o++)
+			{
+				
+				addObs(new Observation(observation_kid.get(o).getDate(), observation_kid.get(o).getObservation()));
+			}
+			
+			//addObs(new Observation(Calendar.getInstance(), "La niña se portó bien"));
+			//addObs(new Observation(Calendar.getInstance(), "La niña ahora se porto mal"));
 
 			new_obs = (Button) findViewById(R.id.obs_add_button);
 			new_obs.setOnClickListener(new View.OnClickListener() {
@@ -153,8 +182,18 @@ public class JournalActivity extends Activity {
 			TableLayout meal_visibility = (TableLayout) findViewById(R.id.meals_layout);
 			meal_visibility.setVisibility(0);
 			
-			addMeals(new Meal(Calendar.getInstance(), TypeMeal.SNACK_AM, HowMuchEat.ALMOST_EVERYTHING, "Chocman"));
-			addMeals(new Meal(Calendar.getInstance(), TypeMeal.LUNCH, HowMuchEat.SOMETHING, "Carne con Arroz"));
+			
+			
+			meal_kid = api.getMeals(kid.getId());
+			for(int o = 0; o< meal_kid.size(); o++)
+			{
+				
+				addMeals(new Meal(meal_kid.get(o).getDate(), meal_kid.get(o).getTypeMeal(),  meal_kid.get(o).getHowMuchEat(), meal_kid.get(o).getMeal()));
+
+			}
+			
+			//addMeals(new Meal(Calendar.getInstance(), TypeMeal.SNACK_AM, HowMuchEat.ALMOST_EVERYTHING, "Chocman"));
+			//addMeals(new Meal(Calendar.getInstance(), TypeMeal.LUNCH, HowMuchEat.SOMETHING, "Carne con Arroz"));
 
 			new_meal = (Button) findViewById(R.id.meals_add_button);
 			new_meal.setOnClickListener(new View.OnClickListener() {
@@ -239,10 +278,24 @@ public class JournalActivity extends Activity {
 
 		if (nap) {
 			
-			addNaps(new Nap(Calendar.getInstance(), Calendar.getInstance()));
+			
+			
+			
+			nap_kid = api.getNaps(kid.getId());
+			for(int o = 0; o< nap_kid.size(); o++)
+			{
+				
+				//addObs(new Observation(observation_kid.get(o).getDate(), observation_kid.get(o).getObservation()));
+				addNaps(new Nap(nap_kid.get(o).getStartTime(), nap_kid.get(o).getEndTime()));
+			}
+			
+			//addNaps(new Nap(Calendar.getInstance(), Calendar.getInstance()));
 			
 			TableLayout nap_visibility = (TableLayout) findViewById(R.id.naps_layout);
 			nap_visibility.setVisibility(0);
+			
+			
+			
 
 			new_nap = (Button) findViewById(R.id.naps_add_button);
 			new_nap.setOnClickListener(new View.OnClickListener() {
@@ -306,8 +359,19 @@ public class JournalActivity extends Activity {
 		}
 
 		if (stool) {
+			
+			
+			
+			stool_kid = api.getStools(kid.getId());
+			for(int o = 0; o< stool_kid.size(); o++)
+			{
+				
+				//addObs(new Observation(observation_kid.get(o).getDate(), observation_kid.get(o).getObservation()));
+				addStools(new Stool(stool_kid.get(o).getDate(),stool_kid.get(o).getStoolCarasteristic(),stool_kid.get(o).getComments()));
 
-			addStools(new Stool(Calendar.getInstance(), StoolCharacteristics.NORMAL, "Sin olor"));
+			}
+
+			//addStools(new Stool(Calendar.getInstance(), StoolCharacteristics.NORMAL, "Sin olor"));
 			
 			TableLayout stool_visibility = (TableLayout) findViewById(R.id.stools_layout);
 			stool_visibility.setVisibility(0);
