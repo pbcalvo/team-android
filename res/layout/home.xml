@@ -12,7 +12,7 @@
        android:layout_weight="1"
        android:orientation="horizontal"
        android:gravity="center"
-       android:background="@color/grey" >
+       android:background="@color/orange" >
     	
        <TextView 
     	android:id="@+id/titulo"
@@ -20,7 +20,7 @@
     	android:layout_height="wrap_content"
     	android:textSize="20dp"
     	android:text="@string/journal_title"
-    	android:textColor="@color/black_mate"/>
+    	android:textColor="@color/white"/>
        
     	</RelativeLayout>
     	
@@ -65,8 +65,9 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0sp"
-        android:layout_weight="2"
-        android:orientation="horizontal" >
+        android:layout_weight="1.5"
+        android:orientation="horizontal"
+        android:background="@color/black_mate" >
     	    		
     		<Button 
     			android:id="@+id/journal_button"
@@ -81,7 +82,7 @@
     			android:layout_height="fill_parent"
     			android:layout_width="0dip"
     			android:layout_weight="1"
-    			android:background="@drawable/messages_icon"
+    			android:background="@drawable/message_white"
     		/>
     		
     		<Button 
@@ -89,7 +90,7 @@
     			android:layout_height="fill_parent"
     			android:layout_weight="1"
     			android:layout_width="0dip"
-    			android:background="@drawable/announcements_icon"
+    			android:background="@drawable/announces_white"
     		/>
     		
     		<Button 
@@ -97,7 +98,7 @@
     			android:layout_width="0dip"
     			android:layout_height="fill_parent"
     			android:layout_weight="1"
-    			android:background="@drawable/calendar_icon"
+    			android:background="@drawable/calendar_white"
     		/>
     		
     	</LinearLayout>
