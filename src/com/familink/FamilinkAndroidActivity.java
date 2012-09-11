@@ -338,9 +338,9 @@ public class FamilinkAndroidActivity extends Activity {
 		TextView name_kid = (TextView) view.findViewById(R.id.name_kid);
 		name_kid.setText(kid.getName());
 		//name_kid.setId(i);
-		name_kid.setId(kid.getId());
+		//name_kid.setId(kid.getId());
 
-		String names_parents = "";
+		/*String names_parents = "";
 		for(int o = 0; o < kid.getGuardians().size(); o++)
 		{
 			if(kid.getGuardians().get(o) == kid.getGuardians().get(kid.getGuardians().size()-1))
@@ -356,10 +356,10 @@ public class FamilinkAndroidActivity extends Activity {
 				names_parents = kid.getGuardians().get(o) +" ";
 			}
 			
-		}
+		}*/
 		TextView parents_kid = (TextView) view.findViewById(R.id.parents_kid);
-		parents_kid.setText(names_parents);
-		//parents_kid.setText(parents.get(0) + " y " + parents.get(1));
+		//parents_kid.setText(names_parents);
+		parents_kid.setText(parents.get(0) + " y " + parents.get(1));
 		//parents_kid.setId(i);
 
 		RelativeLayout layout_kid = (RelativeLayout) view
