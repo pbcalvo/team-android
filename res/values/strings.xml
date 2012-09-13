@@ -10,6 +10,8 @@
     <string name="title_activity_announcements">AnnouncementsActivity</string>
     <string name="title_activity_message">MessageActivity</string>
     <string name="title_activity_message_kid">MessageKid</string>
+    <string name="title_activity_calendar">CalendarActivity</string>
+    
 
     <!-- Journal String Resources -->
     <string name="journal_title">Journal</string>
@@ -47,6 +49,10 @@
 
     <!-- Calendar String Resources -->
     <string name="calendar_title">Calendar</string>
+    <string name="calendar_button_day_view">Day Acitivities</string>
+    <string name="calendar_button_add_event">Add Event</string>
+    <string name="calendar_button_add_task">Add Task</string>
+    
 
     <!-- Comments String Resources -->
     <string name="comments_title">Comments</string>

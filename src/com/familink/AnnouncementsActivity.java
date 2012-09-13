@@ -177,12 +177,37 @@ public class AnnouncementsActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				/*
-				 * Intent intent = new Intent(getBaseContext(),
-				 * JournalActivity.class); startActivityForResult(intent, 0);
-				 * finish();
-				 */
+				clickView = getLayoutInflater().inflate(
+						R.layout.announcement_form, null);
+				AlertDialog.Builder builder = new AlertDialog.Builder(
+						AnnouncementsActivity.this);
+				
+				TextView title_text = (TextView) v.findViewById(R.id.announcement_title);
+				TextView content_text = (TextView) v.findViewById(R.id.announcement_content);
+				TextView date_text = (TextView) v.findViewById(R.id.announcement_date);
+				
+				builder.setTitle(title_text.getText().toString());
+				
+				TextView announcement_show_content = (TextView) clickView.findViewById(R.id.announcement_show_content);
+				announcement_show_content.setText(content_text.getText().toString());
+				
+				TextView announcement_show_date = (TextView) clickView.findViewById(R.id.announcement_show_date);
+				announcement_show_date.setText(date_text.getText().toString());
+				
+				builder.setView(clickView);
+				
+				builder.setPositiveButton("OK",
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								dialog.dismiss();
+
+							}
+						});
+
+				builder.create().show();
 			}
 		});
 

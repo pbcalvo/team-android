@@ -54,6 +54,10 @@
             android:label="@string/title_activity_web"
             android:theme="@style/noAnimTheme" >
         </activity>
+        <activity 
+            android:name=".CalendarActivity"
+            android:label= "@string/title_activity_calendar" >
+        </activity>
     </application>
 
 </manifest>

@@ -156,7 +156,7 @@ public class MessageKid extends Activity {
 		date_text.setText(message.getDate().get(Calendar.HOUR_OF_DAY) + ":" + message.getDate().get(Calendar.MINUTE) + ", today");
 
 
-		messagesLinearLayout.addView(view, 0, new LayoutParams(
+		messagesLinearLayout.addView(view, new LayoutParams(
 				LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
 
 	}
