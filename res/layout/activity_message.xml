@@ -8,11 +8,11 @@
   
    <RelativeLayout
        android:layout_width="fill_parent"
-       android:layout_height="wrap_content"
+       android:layout_height="0sp"
        android:layout_weight="1"
        android:orientation="horizontal"
        android:gravity="center"
-       android:background="@color/grey" >
+       android:background="@color/orange" >
     	
        <TextView 
     	android:id="@+id/titulo"
@@ -20,13 +20,13 @@
     	android:layout_height="wrap_content"
     	android:textSize="20dp"
     	android:text="@string/message_title"
-    	android:textColor="@color/black_mate"/>
+    	android:textColor="@color/white"/>
        
     	</RelativeLayout>
     	
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0sp"
         android:layout_weight="9"
         android:orientation="vertical"
         android:layout_margin="5sp" >
@@ -64,42 +64,42 @@
     	
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:orientation="horizontal" >
-    	    		
-    		<Button 
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="horizontal"
+        android:background="@color/black_mate" >
+
+        <Button 
     			android:id="@+id/journal_button"
-    			android:text="@string/journal_title"
     			android:layout_height="fill_parent"
     			android:layout_width="0dip"
     			android:layout_weight="1"
+    			android:background="@drawable/journal_white"
     		/>
     		
     		<Button 
     			android:id="@+id/message_button"
-    			android:text="@string/message_title"
     			android:layout_height="fill_parent"
     			android:layout_width="0dip"
     			android:layout_weight="1"
+    			android:background="@drawable/message_icon"
     		/>
     		
     		<Button 
     			android:id="@+id/announcement_button"
-    			android:text="@string/announcement_title"
     			android:layout_height="fill_parent"
     			android:layout_weight="1"
     			android:layout_width="0dip"
+    			android:background="@drawable/announces_white"
     		/>
     		
     		<Button 
     			android:id="@+id/calendar_button"
-    			android:text="@string/calendar_title"
     			android:layout_width="0dip"
     			android:layout_height="fill_parent"
     			android:layout_weight="1"
+    			android:background="@drawable/calendar_white"
     		/>
-    		
-    	</LinearLayout>
+    </LinearLayout>
     
 </LinearLayout>

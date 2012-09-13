@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/grey"
+        android:background="@color/orange"
         android:gravity="center"
         android:orientation="horizontal" >
 
@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Group 1"
-            android:textColor="@color/black_mate"
+            android:textColor="@color/white"
             android:textSize="20sp" />
     </RelativeLayout>
 
@@ -24,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9"
+        android:layout_margin="5sp"
         android:orientation="vertical" >
 
         <TextView
@@ -58,36 +59,41 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="horizontal" >
+        android:layout_weight="1.5"
+        android:orientation="horizontal"
+        android:background="@color/black_mate" >
 
-        <Button
-            android:id="@+id/journal_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/journal_title" />
-
-        <Button
-            android:id="@+id/messages_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/message_title" />
-
-        <Button
-            android:id="@+id/announcements_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/announcement_title" />
-
-        <Button
-            android:id="@+id/calendar_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/calendar_title" />
+        <Button 
+    			android:id="@+id/journal_button"
+    			android:layout_height="fill_parent"
+    			android:layout_width="0dip"
+    			android:layout_weight="1"
+    			android:background="@drawable/journal_white"
+    		/>
+    		
+    		<Button 
+    			android:id="@+id/message_button"
+    			android:layout_height="fill_parent"
+    			android:layout_width="0dip"
+    			android:layout_weight="1"
+    			android:background="@drawable/message_white"
+    		/>
+    		
+    		<Button 
+    			android:id="@+id/announcement_button"
+    			android:layout_height="fill_parent"
+    			android:layout_weight="1"
+    			android:layout_width="0dip"
+    			android:background="@drawable/announces_icon"
+    		/>
+    		
+    		<Button 
+    			android:id="@+id/calendar_button"
+    			android:layout_width="0dip"
+    			android:layout_height="fill_parent"
+    			android:layout_weight="1"
+    			android:background="@drawable/calendar_white"
+    		/>
     </LinearLayout>
 
 </LinearLayout>

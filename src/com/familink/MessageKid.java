@@ -2,25 +2,29 @@ package com.familink;
 
 import java.util.Calendar;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
+import familink_model.Message;
 
 public class MessageKid extends Activity {
 
 	int kid_id, group_id;
-	String kid_name;
+	String kid_name, teacher_name;
 	Button journal;
 	Button message;
 	Button announcement;
 	Button calendar;
+	Button back_group;
+	Button send_button;
+	EditText insert_message;
 	TextView title;
 	LinearLayout messagesLinearLayout;
 	
@@ -30,6 +34,8 @@ public class MessageKid extends Activity {
         setContentView(R.layout.message_kid);
         
         messagesLinearLayout = (LinearLayout) findViewById(R.id.message_list);
+        insert_message = (EditText) findViewById(R.id.insert_message);
+        send_button = (Button) findViewById(R.id.send_button);
         
         kid_id = this.getIntent().getIntExtra("KID_ID", 0);
 		kid_name = this.getIntent().getStringExtra("KID_NAME");
@@ -38,8 +44,46 @@ public class MessageKid extends Activity {
 		title = (TextView) findViewById(R.id.titulo);
 		title.setText(kid_name);
 		
-		addChat("", "Amanda Solis", "Hola que tal?", Calendar.getInstance());
-		addChat("", "Jenny Bravo", "Hola bien y ud?", Calendar.getInstance());
+		//Hardcoded by now
+		teacher_name = "Jenny Bravo";
+		
+		addChat1("", new Message(Calendar.getInstance(), "Amanda Solis", "Hola que tal?"));
+		addChat("", new Message(Calendar.getInstance(), teacher_name, "Hola bien y ud?"));
+		
+		send_button.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				if (!insert_message.getText().toString().equals(""))
+				{
+					Message newMessage = new Message(Calendar.getInstance(), teacher_name,
+							insert_message.getText().toString());
+					
+					insert_message.setText("");
+					
+					WebAPICommunicator communicator = WebAPICommunicator.getInstance();
+					communicator.sendMessage(kid_id, newMessage);
+					
+					addChat("", newMessage);
+				}
+				
+			}
+		});
+		
+		back_group = (Button) findViewById(R.id.back_group);
+		back_group.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(getBaseContext(),
+						MessageActivity.class);
+				intent.putExtra("GROUP_ID", group_id);
+				startActivityForResult(intent, 0);
+				finish();
+			}
+		});
         
         message = (Button) findViewById(R.id.message_button);
         message.setOnClickListener(new View.OnClickListener() {
@@ -97,19 +141,39 @@ public class MessageKid extends Activity {
         return true;
     }
     
-    public void addChat(String picture, String name, String content, Calendar date) {
+    public void addChat(String picture, Message message) {
 
 		View view = getLayoutInflater().inflate(R.layout.message_layout,
 				null);
 		
 		TextView name_text = (TextView) view.findViewById(R.id.chat_name);
-		name_text.setText(name);
+		name_text.setText(message.getSender());
 		
 		TextView content_text = (TextView) view.findViewById(R.id.chat_content);
-		content_text.setText(content);
+		content_text.setText(message.getMessage());
 
 		TextView date_text = (TextView) view.findViewById(R.id.chat_date);
-		date_text.setText(date.HOUR + ":" + date.MINUTE + ", today");
+		date_text.setText(message.getDate().get(Calendar.HOUR_OF_DAY) + ":" + message.getDate().get(Calendar.MINUTE) + ", today");
+
+
+		messagesLinearLayout.addView(view, 0, new LayoutParams(
+				LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+
+	}
+    
+    public void addChat1(String picture, Message message) {
+
+		View view = getLayoutInflater().inflate(R.layout.message_parents_layout,
+				null);
+		
+		TextView name_text = (TextView) view.findViewById(R.id.chat_name);
+		name_text.setText(message.getSender());
+		
+		TextView content_text = (TextView) view.findViewById(R.id.chat_content);
+		content_text.setText(message.getMessage());
+
+		TextView date_text = (TextView) view.findViewById(R.id.chat_date);
+		date_text.setText(message.getDate().get(Calendar.HOUR_OF_DAY) + ":" + message.getDate().get(Calendar.MINUTE) + ", today");
 
 
 		messagesLinearLayout.addView(view, 0, new LayoutParams(

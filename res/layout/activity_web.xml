@@ -19,50 +19,21 @@
     	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
     	android:textSize="20dp"
-    	android:text="@string/journal_title"
+    	android:text="www.familink.cl"
     	android:textColor="@color/white"/>
        
     	</RelativeLayout>
-    	
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0sp"
-        android:layout_weight="9"
-        android:orientation="vertical"
-        android:layout_margin="5sp" 
-        >
-    	
-    	<TextView 
-    	android:id="@+id/title_kid"
-    	android:layout_width="wrap_content"
-    	android:layout_height="wrap_content"
-    	android:text="@string/kid_select"
-    	android:textSize="20sp"
-    	android:textColor="@color/grey_mate"/>   	
-    	
-       <ScrollView
-           android:layout_below="@+id/title_kid"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
-           
-           <LinearLayout 
-               android:id="@+id/kidsList"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"    
-               android:orientation="vertical"         
-               >
-               
-               	
-               
-           </LinearLayout>
-           
-           
-       </ScrollView>
+        android:layout_weight="9" >
+    <WebView 
+    android:id="@+id/webview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	/>
+    </LinearLayout>
     
-    	
-    	
-    	</RelativeLayout>
-    	
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0sp"
@@ -75,7 +46,7 @@
     			android:layout_height="fill_parent"
     			android:layout_width="0dip"
     			android:layout_weight="1"
-    			android:background="@drawable/journals_icon"
+    			android:background="@drawable/journal_white"
     		/>
     		
     		<Button 
@@ -103,5 +74,5 @@
     		/>
     		
     	</LinearLayout>
-    
+
 </LinearLayout>
