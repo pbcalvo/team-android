@@ -53,12 +53,29 @@
                     android:layout_height="wrap_content"
                     android:visibility="gone" >
 
-                    <TextView
+                    <RelativeLayout
+                        android:id="@+id/observation_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/obs_title"
                         android:textColor="@color/grey_mate"
                         android:textSize="20sp" />
+                        
+                        <Button
+                            android:id="@+id/obs_add_button_top"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40sp"
+                            android:layout_alignParentRight="true"
+                            android:text="@string/obs_new_top"
+                            android:textColor="@color/grey_mate"
+                            android:textSize="15sp" 
+                            />
+                    </RelativeLayout>
+                    
 
                     <LinearLayout
                         android:id="@+id/observation_list"
@@ -88,13 +105,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="gone" >
+					
+					<RelativeLayout
+                        android:id="@+id/meals_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
 
-                    <TextView
+                        <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/meal_title"
                         android:textColor="@color/grey_mate"
                         android:textSize="20sp" />
+
+                        
+                        <Button
+                            android:id="@+id/meals_add_button_top"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40sp"
+                            android:layout_alignParentRight="true"
+                            android:text="@string/meal_new_top"
+                            android:textColor="@color/grey_mate"
+                            android:textSize="15sp" 
+                            />
+                    </RelativeLayout>
+                   
 
                     <LinearLayout
                         android:id="@+id/meals_list"
@@ -125,12 +160,30 @@
                     android:layout_height="wrap_content"
                     android:visibility="gone" >
 
-                    <TextView
+                    
+                    <RelativeLayout
+                        android:id="@+id/naps_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/nap_title"
                         android:textColor="@color/grey_mate"
                         android:textSize="20sp" />
+                        
+                        <Button
+                        android:id="@+id/naps_add_button_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40sp"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/nap_new_top"
+                        android:textColor="@color/grey_mate"
+                        android:textSize="15sp" />
+                        
+                    </RelativeLayout>
+                    
 
                     <LinearLayout
                         android:id="@+id/naps_list"
@@ -161,12 +214,29 @@
                     android:layout_height="wrap_content"
                     android:visibility="gone" >
 
-                    <TextView
+                    
+                    <RelativeLayout
+                        android:id="@+id/stool_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/stool_title"
                         android:textColor="@color/grey_mate"
                         android:textSize="20sp" />
+                        
+                        <Button
+                        android:id="@+id/stool_add_button_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40sp"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/stool_new_top"
+                        android:textColor="@color/grey_mate"
+                        android:textSize="15sp" />
+                        
+                    </RelativeLayout>
 
                     <LinearLayout
                         android:id="@+id/stools_list"

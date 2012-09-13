@@ -37,7 +37,7 @@ public class JournalActivity extends Activity {
 	TextView title;
 	int kid_id, group_id;
 	String kid_name;
-	Button back_group, new_obs, new_meal, new_nap, new_stool, add_obs,
+	Button back_group, new_obs, new_obs_top, new_meal, new_meal_top, new_nap, new_nap_top, new_stool, new_stool_top, add_obs,
 			cancel_obs;
 	Dialog dialog;
 	Button journal;
@@ -175,6 +175,61 @@ public class JournalActivity extends Activity {
 
 				}
 			});
+			
+			new_obs_top = (Button) findViewById(R.id.obs_add_button_top);
+			new_obs_top.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+
+					clickView = getLayoutInflater().inflate(
+							R.layout.observation_form, null);
+					AlertDialog.Builder builder = new AlertDialog.Builder(
+							JournalActivity.this);
+					builder.setTitle(R.string.obs_new_top);
+					builder.setView(clickView);
+
+					builder.setPositiveButton(R.string.string_add,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									
+									EditText editText = (EditText) clickView.findViewById(R.id.obs_text);
+									WebAPICommunicator communicator = WebAPICommunicator.getInstance();
+									Observation obs = new Observation(Calendar.getInstance(), editText.getText().toString());
+									communicator.addObservation(kid_id, obs);
+									
+									addObs(obs);
+
+									dialog.dismiss();
+									Toast.makeText(JournalActivity.this,
+											R.string.obs_done,
+											Toast.LENGTH_SHORT).show();
+								}
+
+							});
+
+					builder.setNegativeButton(R.string.string_cancel,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									// Do nothing
+									dialog.dismiss();
+								}
+							});
+
+					builder.create().show();
+
+				}
+			});
+			
+			
+			
 		}
 
 		if (meal) {
@@ -274,6 +329,89 @@ public class JournalActivity extends Activity {
 
 				}
 			});
+			
+			
+			new_meal_top = (Button) findViewById(R.id.meals_add_button_top);
+			new_meal_top.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+
+					clickView = getLayoutInflater().inflate(
+							R.layout.meals_form, null);
+					AlertDialog.Builder builder = new AlertDialog.Builder(
+							JournalActivity.this);
+					builder.setTitle(R.string.meal_new_top);
+					builder.setView(clickView);
+
+					builder.setPositiveButton(R.string.string_add,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									
+									TypeMeal typeMeal;
+									HowMuchEat howMuchEat;
+									String specifiedMeal;
+									
+									RadioButton breakfast = (RadioButton) clickView.findViewById(R.id.breakfast);
+									RadioButton snackAM = (RadioButton) clickView.findViewById(R.id.snack_am);
+									RadioButton lunch = (RadioButton) clickView.findViewById(R.id.lunch);
+									RadioButton snackPM = (RadioButton) clickView.findViewById(R.id.snack_pm);
+									
+									if (breakfast.isChecked()) typeMeal = TypeMeal.BREAKFAST;
+									else if (snackAM.isChecked()) typeMeal = TypeMeal.SNACK_AM;
+									else if (lunch.isChecked()) typeMeal = TypeMeal.LUNCH;
+									else if (snackPM.isChecked()) typeMeal = TypeMeal.SNACK_PM;
+									else typeMeal = TypeMeal.DINNER;
+									
+									RadioButton tasted = (RadioButton) clickView.findViewById(R.id.tasted);
+									RadioButton something = (RadioButton) clickView.findViewById(R.id.something);
+									RadioButton half = (RadioButton) clickView.findViewById(R.id.half);
+									RadioButton almost = (RadioButton) clickView.findViewById(R.id.almost);
+									
+									if (tasted.isChecked()) howMuchEat = HowMuchEat.JUST_TASTED_IT;
+									else if (something.isChecked()) howMuchEat = HowMuchEat.SOMETHING;
+									else if (half.isChecked()) howMuchEat = HowMuchEat.HALF;
+									else if (almost.isChecked()) howMuchEat = HowMuchEat.ALMOST_EVERYTHING;
+									else howMuchEat = HowMuchEat.ALL;
+									
+									EditText text = (EditText)clickView.findViewById(R.id.editText1);
+									specifiedMeal = text.getText().toString();
+									
+									Meal meal = new Meal(Calendar.getInstance(), typeMeal, howMuchEat, specifiedMeal);
+									
+									WebAPICommunicator communicator = WebAPICommunicator.getInstance();
+									communicator.addMeal(kid_id, meal);
+									addMeals(meal);
+											
+									dialog.dismiss();
+									Toast.makeText(JournalActivity.this,
+											R.string.meal_done,
+											Toast.LENGTH_SHORT).show();
+								}
+
+							});
+
+					builder.setNegativeButton(R.string.string_cancel,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									// Do nothing
+									dialog.dismiss();
+								}
+							});
+
+					builder.create().show();
+
+				}
+			});
+			
+			
 		}
 
 		if (nap) {
@@ -356,6 +494,69 @@ public class JournalActivity extends Activity {
 
 				}
 			});
+			
+			new_nap_top = (Button) findViewById(R.id.naps_add_button_top);
+			new_nap_top.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+
+					clickView = getLayoutInflater().inflate(R.layout.nap_form,
+							null);
+					AlertDialog.Builder builder = new AlertDialog.Builder(
+							JournalActivity.this);
+					builder.setTitle(R.string.nap_new_top);
+					builder.setView(clickView);
+
+					builder.setPositiveButton(R.string.string_add,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									TimePicker picker1 = (TimePicker) clickView.findViewById(R.id.timePicker1);
+									TimePicker picker2 = (TimePicker) clickView.findViewById(R.id.timePicker2);
+									
+									Calendar startTime = Calendar.getInstance();
+									startTime.set(Calendar.HOUR_OF_DAY, picker1.getCurrentHour());
+									startTime.set(Calendar.MINUTE, picker1.getCurrentMinute());
+									
+									Calendar endTime = Calendar.getInstance();
+									endTime.set(Calendar.HOUR_OF_DAY, picker2.getCurrentHour());
+									endTime.set(Calendar.MINUTE, picker2.getCurrentMinute());
+									
+									WebAPICommunicator communicator = WebAPICommunicator.getInstance();
+									Nap nap = new Nap(startTime, endTime);
+									communicator.addNap(kid_id, nap);
+									addNaps(nap);
+									
+									dialog.dismiss();
+									Toast.makeText(JournalActivity.this,
+											R.string.nap_done,
+											Toast.LENGTH_SHORT).show();
+								}
+
+							});
+
+					builder.setNegativeButton(R.string.string_cancel,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									// Do nothing
+									dialog.dismiss();
+								}
+							});
+
+					builder.create().show();
+
+				}
+			});
+			
+			
+			
 		}
 
 		if (stool) {
@@ -448,6 +649,82 @@ public class JournalActivity extends Activity {
 
 				}
 			});
+			
+			
+			new_stool_top = (Button) findViewById(R.id.stool_add_button_top);
+			new_stool_top.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+
+					clickView = getLayoutInflater().inflate(
+							R.layout.stool_form, null);
+					AlertDialog.Builder builder = new AlertDialog.Builder(
+							JournalActivity.this);
+					builder.setTitle(R.string.stool_new_top);
+					builder.setView(clickView);
+
+					builder.setPositiveButton(R.string.string_add,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									TimePicker picker = (TimePicker) clickView.findViewById(R.id.timePicker1);
+									
+									Calendar date = Calendar.getInstance();
+									date.set(Calendar.HOUR_OF_DAY, picker.getCurrentHour());
+									date.set(Calendar.MINUTE, picker.getCurrentMinute());
+									
+									RadioButton normal = (RadioButton) clickView.findViewById(R.id.normal);
+									RadioButton solid = (RadioButton) clickView.findViewById(R.id.solid);
+									RadioButton soft = (RadioButton) clickView.findViewById(R.id.soft);
+									RadioButton fluid = (RadioButton) clickView.findViewById(R.id.fluid);
+									RadioButton pee = (RadioButton) clickView.findViewById(R.id.pee);
+									RadioButton dry = (RadioButton) clickView.findViewById(R.id.dry);
+									
+									StoolCharacteristics stoolCharacteristic;
+									
+									if (normal.isChecked()) stoolCharacteristic = StoolCharacteristics.NORMAL;
+									else if (solid.isChecked()) stoolCharacteristic = StoolCharacteristics.SOLID;
+									else if (soft.isChecked()) stoolCharacteristic = StoolCharacteristics.SOFT;
+									else if (fluid.isChecked()) stoolCharacteristic = StoolCharacteristics.FLUID;
+									else if (pee.isChecked()) stoolCharacteristic = StoolCharacteristics.PEE;
+									else if (dry.isChecked()) stoolCharacteristic = StoolCharacteristics.DRY;
+									else stoolCharacteristic = StoolCharacteristics.OTHER;
+									
+									EditText text = (EditText) clickView.findViewById(R.id.editText1);
+									
+									Stool stool = new Stool(date, stoolCharacteristic, text.getText().toString());
+									WebAPICommunicator communicator = WebAPICommunicator.getInstance();
+									communicator.addStool(kid_id, stool);
+									addStools(stool);
+									
+									dialog.dismiss();
+									Toast.makeText(JournalActivity.this,
+											R.string.stool_new,
+											Toast.LENGTH_SHORT).show();
+								}
+
+							});
+
+					builder.setNegativeButton(R.string.string_cancel,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									// Do nothing
+									dialog.dismiss();
+								}
+							});
+
+					builder.create().show();
+
+				}
+			});
+			
 		}
 
 		message = (Button) findViewById(R.id.message_button);

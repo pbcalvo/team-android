@@ -87,5 +87,9 @@
     <string name="kid_select">Select a Kid</string>
     <string name="group_select">Select Group</string>
     <string name="title_activity_web">WebActivity</string>
+    <string name="obs_new_top">Add Obs</string>
+    <string name="meal_new_top">Add Meal</string>
+    <string name="nap_new_top">Add Nap</string>
+    <string name="stool_new_top">Add Stool</string>
 
 </resources>

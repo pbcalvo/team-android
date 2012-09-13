@@ -102,5 +102,9 @@
     
     <string name="kid_select">Seleccione un Niño</string>
     <string name="group_select">Seleccione un Grupo</string>
+    <string name="obs_new_top">Agregar obs</string>
+    <string name="meal_new_top">Agregar Comida</string>
+    <string name="nap_new_top">Agregar Siesta</string>
+    <string name="stool_new_top">Agregar Deposición </string>
 
 </resources>
