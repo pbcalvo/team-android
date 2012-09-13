@@ -47,7 +47,7 @@ public class MessageKid extends Activity {
 		//Hardcoded by now
 		teacher_name = "Jenny Bravo";
 		
-		addChat("", new Message(Calendar.getInstance(), "Amanda Solis", "Hola que tal?"));
+		addChat1("", new Message(Calendar.getInstance(), "Amanda Solis", "Hola que tal?"));
 		addChat("", new Message(Calendar.getInstance(), teacher_name, "Hola bien y ud?"));
 		
 		send_button.setOnClickListener(new View.OnClickListener() {
@@ -144,6 +144,26 @@ public class MessageKid extends Activity {
     public void addChat(String picture, Message message) {
 
 		View view = getLayoutInflater().inflate(R.layout.message_layout,
+				null);
+		
+		TextView name_text = (TextView) view.findViewById(R.id.chat_name);
+		name_text.setText(message.getSender());
+		
+		TextView content_text = (TextView) view.findViewById(R.id.chat_content);
+		content_text.setText(message.getMessage());
+
+		TextView date_text = (TextView) view.findViewById(R.id.chat_date);
+		date_text.setText(message.getDate().get(Calendar.HOUR_OF_DAY) + ":" + message.getDate().get(Calendar.MINUTE) + ", today");
+
+
+		messagesLinearLayout.addView(view, 0, new LayoutParams(
+				LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+
+	}
+    
+    public void addChat1(String picture, Message message) {
+
+		View view = getLayoutInflater().inflate(R.layout.message_parents_layout,
 				null);
 		
 		TextView name_text = (TextView) view.findViewById(R.id.chat_name);

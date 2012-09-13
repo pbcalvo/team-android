@@ -52,7 +52,7 @@ public class WebAPICommunicator {
 		guardians.add("María");
 		kids.add(new Kid(11, "Juan Perez", guardians));
 		
-		guardians.clear();
+		guardians = new ArrayList<String>();
 		guardians.add("Pedro");
 		guardians.add("Amanda");
 		
