@@ -9,6 +9,7 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import android.app.Activity;
 import android.content.Context;
@@ -152,6 +153,7 @@ public class CalendarActivity extends Activity implements OnClickListener {
 		private static final int DAY_OFFSET = 1;
 		private final String[] weekdays = new String[]{"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 		private final String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+		private Map<String, Integer> months_numbers; 
 		private final int[] daysOfMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 		private final int month, year;
 		private int daysInMonth, prevMonthDays;
@@ -173,6 +175,9 @@ public class CalendarActivity extends Activity implements OnClickListener {
 			this.list = new ArrayList<String>();
 			this.month = month;
 			this.year = year;
+			
+			this.initiateMonthsNumbers(); 
+			
 
 			Log.d(tag, "==> Passed in Date FOR Month: " + month + " " + "Year: " + year);
 			Calendar calendar = Calendar.getInstance();
@@ -398,8 +403,6 @@ public class CalendarActivity extends Activity implements OnClickListener {
 			if(!selectedDate)
 				selectedDate = true; 
 			
-			//Hago visible los botones ahora que hay fecha seleccionada.
-			button_layout.setVisibility(View.VISIBLE);
 			
 			//Esto es del código original.
 			//selectedDayMonthYearButton.setText("Selected: " + date_month_year);
@@ -408,9 +411,16 @@ public class CalendarActivity extends Activity implements OnClickListener {
 			String[] sub1 = currentSelectedDate.split("-");
 			String[] sub2 = previouslySelectedDate.split("-"); 
 			
+			Calendar rightNow = Calendar.getInstance();
+			int selected_year = Integer.parseInt(sub1[2]);
+			int selected_month = this.months_numbers.get(sub1[1]);
+			int selected_day = Integer.parseInt(sub1[0]);
+			
 			//Acá ver si son del mismo mes. Si es así, se cambian de rojo a blanco.
 			if(!previouslySelectedDate.equals("")) {
-				//Veo si hay una fecha anterior seleccionada, de ser así, la cambio de rojo a blanco.
+				
+				//Veo si la fecha anterior selecciona es del mismo mes.
+				//De ser así, la cambio de rojo a blanco.
 				if(sub1[1].equals(sub2[1]))
 				{
 					//Acá se debe cambiar el elemento en la lista y guardar.
@@ -421,12 +431,34 @@ public class CalendarActivity extends Activity implements OnClickListener {
 					list.add(position,new_previous);
 				}
 			}
+			
+			//Hago visible los botones ahora que hay fecha seleccionada.
+			//Antes de eso veo si la fecha es anterior o posterior y cambio
+			//las prop de cada botón.
+			boolean posterior = true; 
+			if(selected_year <= rightNow.get(Calendar.YEAR)) {
+				int current_month = rightNow.get(Calendar.MONTH);
+				if((selected_month-1) <=current_month) {
+					if(selected_day<=rightNow.get(Calendar.DAY_OF_MONTH)) {
+						findViewById(R.id.button_add_event).setVisibility(View.INVISIBLE); 
+						findViewById(R.id.button_add_task).setVisibility(View.INVISIBLE); 
+						posterior = false;
+					}
+						
+				}
+			} if(posterior) {
+				findViewById(R.id.button_add_event).setVisibility(View.VISIBLE); 
+				findViewById(R.id.button_add_task).setVisibility(View.VISIBLE); 
+			}
+			
 			previouslySelectedDate = currentSelectedDate; 
 		
 			String new_current = sub1[0]+"-RED-"+sub1[1]+"-"+sub1[2]; 
 			int position = Integer.parseInt(sub1[4]); 
 			list.remove(position); 
 			list.add(position,new_current);
+			
+			button_layout.setVisibility(View.VISIBLE);
 			
 			try {
 				Date parsedDate = dateFormatter.parse(date_month_year_color_pos);
@@ -454,9 +486,26 @@ public class CalendarActivity extends Activity implements OnClickListener {
 		public int getCurrentWeekDay() {
 			return currentWeekDay;
 		}
+		
+		/* Métodos agregados por PameCal */
+		public void initiateMonthsNumbers() {
+			this.months_numbers = new HashMap<String, Integer>(); 
+			months_numbers.put("January", 1); 
+			months_numbers.put("February", 2); 
+			months_numbers.put("March", 3); 
+			months_numbers.put("April", 4); 
+			months_numbers.put("May", 5); 
+			months_numbers.put("June", 6); 
+			months_numbers.put("July", 7); 
+			months_numbers.put("August", 8); 
+			months_numbers.put("September", 9); 
+			months_numbers.put("October", 10); 
+			months_numbers.put("November", 11); 
+			months_numbers.put("December", 12); 
+		}
 	}
 	
-	/* Métodos agregados por PameCal */
+	
 	
 	//Método Menú.
 	 @Override
