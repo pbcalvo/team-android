@@ -101,6 +101,9 @@ public class FamilinkAndroidActivity extends Activity {
 				// Intent intent = new Intent(getBaseContext(),
 				// SelectGroupActivity.class);
 				// startActivityForResult(intent, 0);
+				Intent intent = new Intent(getBaseContext(), CalendarActivity.class);
+	        	startActivityForResult(intent, 0);		
+	        	finish();			
 			}
 		});
 
