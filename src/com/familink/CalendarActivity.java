@@ -349,6 +349,8 @@ public class CalendarActivity extends Activity implements OnClickListener {
 			String theday = day_color[0];
 			String themonth = day_color[2];
 			String theyear = day_color[3];
+		
+			String thecolor = day_color[1]; 
 			if ((!eventsPerMonthMap.isEmpty()) && (eventsPerMonthMap != null)) {
 				if (eventsPerMonthMap.containsKey(theday)) {
 					num_events_per_day = (TextView) row.findViewById(R.id.num_events_per_day);
@@ -356,10 +358,11 @@ public class CalendarActivity extends Activity implements OnClickListener {
 					num_events_per_day.setText(numEvents.toString());
 				}
 			}
+			
 
 			// Set the Day GridCell
 			gridcell.setText(theday);
-			gridcell.setTag(theday + "-" + themonth + "-" + theyear);
+			gridcell.setTag(theday + "-" + themonth + "-" + theyear + "-"+thecolor+"-"+position);
 			Log.d(tag, "Setting GridCell " + theday + "-" + themonth + "-" + theyear);
 
 			if (day_color[1].equals("GREY")) {
@@ -371,6 +374,9 @@ public class CalendarActivity extends Activity implements OnClickListener {
 			if (day_color[1].equals("BLUE")) {
 				gridcell.setTextColor(getResources().getColor(R.color.static_text_color));
 			}
+			if (day_color[1].equals("RED")) {
+				gridcell.setTextColor(Color.RED);
+			}
 			return row;
 		}
 		
@@ -381,10 +387,10 @@ public class CalendarActivity extends Activity implements OnClickListener {
 		public void onClick(View view) {
 			
 			//Recupero el tag del lugar que ha sido cliqueado.
-			String date_month_year = (String) view.getTag();  
+			String date_month_year_color_pos = (String) view.getTag();  
 			
 			//Ahora si hay una fecha cliqueada, por lo que:
-			currentSelectedDate = date_month_year; 
+			currentSelectedDate = date_month_year_color_pos; 
 			
 			if(!selectedDate)
 				selectedDate = true; 
@@ -396,25 +402,33 @@ public class CalendarActivity extends Activity implements OnClickListener {
 			//selectedDayMonthYearButton.setText("Selected: " + date_month_year);
 			
 			//Veo si las fechas son del mismo mes y año.
-			String sub1 = currentSelectedDate; 
-			String sub2 = previouslySelectedDate; 
+			String[] sub1 = currentSelectedDate.split("-");
+			String[] sub2 = previouslySelectedDate.split("-"); 
 			
-			if((sub1.substring(sub1.indexOf("-"))).equalsIgnoreCase(sub2.substring(sub2.indexOf("-")))) {
+			//Acá ver si son del mismo mes. Si es así, se cambian de rojo a blanco.
+			if(!previouslySelectedDate.equals("")) {
 				//Veo si hay una fecha anterior seleccionada, de ser así, la cambio de rojo a blanco.
-				if(!previouslySelectedDate.equals(""))
+				if(sub1[1].equals(sub2[1]))
 				{
-					previouslySelectedDate.replace("RED", "WHITE");
 					//Acá se debe cambiar el elemento en la lista y guardar.
+					//Formo el nuevo string 
+					String new_previous = sub2[0]+"-WHITE-"+sub2[1]+"-"+sub2[2]; 
+					int position = Integer.parseInt(sub2[4]); 
+					list.remove(position); 
+					list.add(position,new_previous);
 				}
 			}
 			
 			if(previouslySelectedDate.equals(""))
 				previouslySelectedDate = currentSelectedDate; 
-			currentSelectedDate.replace("WHITE", "RED"); 
-			//Acá también tengo que guardar.				
+		
+			String new_current = sub1[0]+"-RED-"+sub1[1]+"-"+sub1[2]; 
+			int position = Integer.parseInt(sub1[4]); 
+			list.remove(position); 
+			list.add(position,new_current);
 			
 			try {
-				Date parsedDate = dateFormatter.parse(date_month_year);
+				Date parsedDate = dateFormatter.parse(date_month_year_color_pos);
 				Log.d(tag, "Parsed Date: " + parsedDate.toString());
 
 			}
