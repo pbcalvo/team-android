@@ -29,6 +29,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+//TODO: Ver qué pasa si se elije una fecha anterior a la actual. 
+/*La idea es guardar la fecha actual numéricamente y obtener la presionada numéricamente y 
+ * restarlas.
+ */
+
 public class CalendarActivity extends Activity implements OnClickListener {
 	
 	private static final String tag = "SimpleCalendarViewActivity";
@@ -381,8 +386,6 @@ public class CalendarActivity extends Activity implements OnClickListener {
 		}
 		
 		//Método cuando se selecciona una fecha. 
-		/**TODO
-		 * Hacer que se seleccione la fecha, se guarde y se envíe al siguiente paso.**/
 		@Override
 		public void onClick(View view) {
 			
@@ -418,9 +421,7 @@ public class CalendarActivity extends Activity implements OnClickListener {
 					list.add(position,new_previous);
 				}
 			}
-			
-			if(previouslySelectedDate.equals(""))
-				previouslySelectedDate = currentSelectedDate; 
+			previouslySelectedDate = currentSelectedDate; 
 		
 			String new_current = sub1[0]+"-RED-"+sub1[1]+"-"+sub1[2]; 
 			int position = Integer.parseInt(sub1[4]); 
