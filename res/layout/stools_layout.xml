@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="4sp"
-    android:background="@color/black_mate"
-    android:clickable="true"
-    android:paddingBottom="1sp"
-    android:paddingRight="1sp" >
+    android:layout_height="60sp"
+    android:layout_margin="4sp">
 
-        <RelativeLayout
-            android:id="@+id/stools"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white_mate"
-            android:clickable="true"
-            android:padding="5sp" >
+    <RelativeLayout
+        android:id="@+id/stools"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/casilla"
+        android:clickable="true"
+        android:padding="5sp" >
+
 
             <TextView
                 android:id="@+id/stools_content"

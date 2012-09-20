@@ -2,13 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/grey_background" >
     
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/string_subject"
-            android:textSize="20dp" /> 
+            android:textSize="20dp"
+            android:textColor="@color/grey_mate" /> 
             
             <EditText
                 android:id="@+id/subject_text"
@@ -20,7 +22,8 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:text="@string/string_message"
-               android:textSize="20dp" /> 
+               android:textSize="20dp"
+               android:textColor="@color/grey_mate" /> 
        
 	       <EditText
 	           android:id="@+id/message_text"

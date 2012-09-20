@@ -6,18 +6,25 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 public class SelectGroupActivity extends Activity{
 	
-	Button button; 
+	RelativeLayout button; 
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_group_layout);
+        
+        ImageView myImageView= (ImageView)findViewById(R.id.familink_logo);
+        Animation myFadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fadein);
+        myImageView.startAnimation(myFadeInAnimation);
                 
-        button = (Button) findViewById(R.id.group1);
+        button = (RelativeLayout) findViewById(R.id.group1);
         
         button.setOnClickListener(new View.OnClickListener() {
 			

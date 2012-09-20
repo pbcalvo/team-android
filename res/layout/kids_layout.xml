@@ -2,26 +2,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4sp"
-    android:background="@color/black_mate"
-    android:clickable="true"
-    android:paddingBottom="1sp"
-    android:paddingRight="1sp" >
+    android:layout_margin="4sp">
 
     <RelativeLayout
         android:id="@+id/relative_kid"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white_mate"
+        android:background="@drawable/casilla"
         android:clickable="true"
         android:padding="5sp" >
 
-        <ImageButton
+        <ImageView
             android:id="@+id/picture_kid"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true" />
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="2sp"
+            android:layout_marginTop="2sp"
+            android:layout_marginBottom="2sp"
+            android:layout_marginRight="10sp"
+            android:background="@drawable/girl" />
 
         <TextView
             android:id="@+id/name_kid"

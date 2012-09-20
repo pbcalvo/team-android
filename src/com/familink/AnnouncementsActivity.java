@@ -122,7 +122,7 @@ public class AnnouncementsActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(getBaseContext(),
-						JournalActivity.class);
+						FamilinkAndroidActivity.class);
 				intent.putExtra("GROUP_ID", 1);
 				startActivityForResult(intent, 0);
 				finish();

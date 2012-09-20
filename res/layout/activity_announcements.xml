@@ -23,24 +23,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="9"
         android:layout_margin="5sp"
+        android:layout_weight="9"
         android:orientation="vertical" >
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/announcement_top"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/announcement_title"
-            android:textColor="@color/grey_mate"
-            android:textSize="20sp" />
+            android:layout_marginBottom="10sp"
+            android:layout_marginTop="10sp" >
 
-        <Button
-            android:id="@+id/announcements_add_button"
-            android:layout_width="wrap_content"
-            android:layout_height="40sp"
-            android:text="@string/announcement_new"
-            android:textColor="@color/grey_mate"
-            android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5sp"
+                android:text="@string/announcement_title"
+                android:textColor="@color/grey_mate"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/announcements_add_button"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/add" />
+        </RelativeLayout>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -51,7 +59,6 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
-
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
@@ -60,40 +67,36 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.5"
-        android:orientation="horizontal"
-        android:background="@color/black_mate" >
+        android:background="@color/black_mate"
+        android:orientation="horizontal" >
 
-        <Button 
-    			android:id="@+id/journal_button"
-    			android:layout_height="fill_parent"
-    			android:layout_width="0dip"
-    			android:layout_weight="1"
-    			android:background="@drawable/journal_white"
-    		/>
-    		
-    		<Button 
-    			android:id="@+id/message_button"
-    			android:layout_height="fill_parent"
-    			android:layout_width="0dip"
-    			android:layout_weight="1"
-    			android:background="@drawable/message_white"
-    		/>
-    		
-    		<Button 
-    			android:id="@+id/announcement_button"
-    			android:layout_height="fill_parent"
-    			android:layout_weight="1"
-    			android:layout_width="0dip"
-    			android:background="@drawable/announces_icon"
-    		/>
-    		
-    		<Button 
-    			android:id="@+id/calendar_button"
-    			android:layout_width="0dip"
-    			android:layout_height="fill_parent"
-    			android:layout_weight="1"
-    			android:background="@drawable/calendar_white"
-    		/>
+        <Button
+            android:id="@+id/journal_button"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/journal_white" />
+
+        <Button
+            android:id="@+id/message_button"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/message_white" />
+
+        <Button
+            android:id="@+id/announcement_button"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/announces_icon" />
+
+        <Button
+            android:id="@+id/calendar_button"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/calendar_white" />
     </LinearLayout>
 
 </LinearLayout>

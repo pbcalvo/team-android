@@ -11,15 +11,6 @@
         android:layout_weight="1"
         android:background="@color/orange"
         android:orientation="horizontal" >
-        
-        <Button
-            android:id="@+id/back_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="Group 1"
-            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/titulo"
@@ -30,32 +21,32 @@
             android:textColor="@color/white"
             android:textSize="20dp" />
     </RelativeLayout>
-
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0sp"
         android:layout_margin="5sp"
         android:layout_weight="9"
         android:orientation="vertical" >
-        
+
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="8" >
 
-                    <ScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true" >
+            <ScrollView
+                android:id="@+id/scrollview_messages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true" >
 
-                        <TableLayout
-                            android:id="@+id/message_list"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" >
-                        </TableLayout>
-                    </ScrollView>
-
-            </RelativeLayout>
+                <TableLayout
+                    android:id="@+id/message_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                </TableLayout>
+            </ScrollView>
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -66,59 +57,56 @@
                 android:id="@+id/insert_message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Insert message"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_toLeftOf="@+id/send_button" />
+                android:layout_toLeftOf="@+id/send_button"
+                android:hint="Insert message" />
 
             <Button
                 android:id="@+id/send_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/string_send"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true" />
+                android:layout_alignParentTop="true"
+                android:text="@string/string_send" />
         </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/message_menu"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1.5"
-        android:orientation="horizontal"
-        android:background="@color/black_mate" >
+        android:background="@color/black_mate"
+        android:orientation="horizontal" >
 
-        <Button 
-    			android:id="@+id/journal_button"
-    			android:layout_height="fill_parent"
-    			android:layout_width="0dip"
-    			android:layout_weight="1"
-    			android:background="@drawable/journal_white"
-    		/>
-    		
-    		<Button 
-    			android:id="@+id/message_button"
-    			android:layout_height="fill_parent"
-    			android:layout_width="0dip"
-    			android:layout_weight="1"
-    			android:background="@drawable/message_icon"
-    		/>
-    		
-    		<Button 
-    			android:id="@+id/announcement_button"
-    			android:layout_height="fill_parent"
-    			android:layout_weight="1"
-    			android:layout_width="0dip"
-    			android:background="@drawable/announces_white"
-    		/>
-    		
-    		<Button 
-    			android:id="@+id/calendar_button"
-    			android:layout_width="0dip"
-    			android:layout_height="fill_parent"
-    			android:layout_weight="1"
-    			android:background="@drawable/calendar_white"
-    		/>
+        <Button
+            android:id="@+id/journal_button"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/journal_white" />
+
+        <Button
+            android:id="@+id/message_button"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/message_icon" />
+
+        <Button
+            android:id="@+id/announcement_button"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/announces_white" />
+
+        <Button
+            android:id="@+id/calendar_button"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/calendar_white" />
     </LinearLayout>
 
 </LinearLayout>

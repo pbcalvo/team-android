@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/group_select"
+            android:text="Familink"
             android:textColor="@color/white"
             android:textSize="20dp" />
     </RelativeLayout>
@@ -25,15 +25,59 @@
         android:layout_width="fill_parent"
         android:layout_height="0sp"
         android:layout_margin="5sp"
-        android:layout_weight="10.5"
+        android:layout_weight="8"
         android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/group1"
-            android:layout_width="100sp"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Group 1" />
+            android:layout_margin="5sp"
+            android:text="@string/group_select"
+            android:textColor="@color/grey_mate"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@+id/group1"
+            android:layout_width="fill_parent"
+            android:layout_height="50sp"
+            android:background="@drawable/casilla"
+            android:clickable="true"
+            android:padding="5sp" >
+
+            <TextView
+                android:id="@+id/name_kid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2sp"
+                android:text="Group 1"
+                android:textColor="@color/grey_mate"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/chevron" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0sp"
+        android:layout_weight="2.5"
+        android:background="@color/grey_background"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/familink_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10sp"
+            android:background="@drawable/familink_logo">
+         </ImageView>
     </LinearLayout>
 
 </LinearLayout>

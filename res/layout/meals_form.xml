@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/grey_background" >
     
     <ScrollView
         android:layout_width="match_parent"
@@ -11,12 +12,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginLeft="5sp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/meal_title"
+    	android:textColor="@color/grey_mate"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TableLayout
@@ -33,6 +36,7 @@
                 android:id="@+id/breakfast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+    	android:textColor="@color/grey_mate"
                 android:checked="true"
                 android:text="@string/string_breakfast" />
 
@@ -40,24 +44,28 @@
                 android:id="@+id/snack_am"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+    	android:textColor="@color/grey_mate"
                 android:text="@string/string_snackam" />
 
             <RadioButton
                 android:id="@+id/lunch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+    	android:textColor="@color/grey_mate"
                 android:text="@string/string_lunch" />
             
             <RadioButton
                 android:id="@+id/snack_pm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+    	android:textColor="@color/grey_mate"
                 android:text="@string/string_snackpm" />
             
             <RadioButton
                 android:id="@+id/dinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+    	android:textColor="@color/grey_mate"
                 android:text="@string/string_dinner" />
         </RadioGroup>
 
@@ -67,6 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/string_howmuch"
+    	android:textColor="@color/grey_mate"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TableLayout 
@@ -83,6 +92,7 @@
                 android:id="@+id/tasted"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+    	android:textColor="@color/grey_mate"
                 android:checked="true"
                 android:text="@string/string_justtasted" />
 
@@ -90,24 +100,28 @@
                 android:id="@+id/something"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+    	android:textColor="@color/grey_mate"
                 android:text="@string/string_something" />
 
             <RadioButton
                 android:id="@+id/half"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+    	android:textColor="@color/grey_mate"
                 android:text="@string/string_half" />
             
             <RadioButton
                 android:id="@+id/almost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+    	android:textColor="@color/grey_mate"
                 android:text="@string/string_alev" />
             
             <RadioButton
                 android:id="@+id/all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+    	android:textColor="@color/grey_mate"
                 android:text="@string/string_all" />
         </RadioGroup>
     
@@ -117,6 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/meal_detail"
+    	android:textColor="@color/grey_mate"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
     <TableLayout 
@@ -129,7 +144,7 @@
             android:id="@+id/editText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Subway" >
+            android:hint="@string/comments_new" >
         </EditText>
 
         </TableLayout>
