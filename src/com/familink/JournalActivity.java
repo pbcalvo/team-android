@@ -57,6 +57,9 @@ public class JournalActivity extends Activity {
 	View clickView;
 	Kid kid;
 	WebAPICommunicator api;
+	
+	EditText journal_show_observation;
+	TextView content_text_journal, date_text_journal;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -552,12 +555,40 @@ public class JournalActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				/*
-				 * Intent intent = new Intent(getBaseContext(),
-				 * JournalActivity.class); startActivityForResult(intent, 0);
-				 * finish();
-				 */
+				
+				clickView = getLayoutInflater().inflate(
+						R.layout.observation_form, null);
+				AlertDialog.Builder builder = new AlertDialog.Builder(
+						JournalActivity.this);
+				
+				content_text_journal = (TextView) v.findViewById(R.id.obs_content);
+				date_text_journal = (TextView) v.findViewById(R.id.obs_date);
+				
+				journal_show_observation = (EditText) clickView.findViewById(R.id.obs_text);
+				journal_show_observation.setText(content_text_journal.getText().toString());
+				
+				builder.setView(clickView);
+				
+				builder.setPositiveButton("Edit",
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								
+								
+								content_text_journal.setText(journal_show_observation.getText().toString());	
+								
+								
+							}
+						});
+							
+				
+				
+				
+				builder.create().show();
+			
+			
 			}
 		});
 
@@ -703,7 +734,40 @@ public class JournalActivity extends Activity {
 				 * JournalActivity.class); startActivityForResult(intent, 0);
 				 * finish();
 				 */
-			}
+
+				/*clickView = getLayoutInflater().inflate(
+						R.layout.observation_form, null);
+				AlertDialog.Builder builder = new AlertDialog.Builder(
+						JournalActivity.this);
+				
+				TextView title_text = (TextView) v.findViewById(R.id.announcement_title);
+				TextView content_text = (TextView) v.findViewById(R.id.announcement_content);
+				TextView date_text = (TextView) v.findViewById(R.id.announcement_date);
+				
+				builder.setTitle(title_text.getText().toString());
+				
+				TextView announcement_show_content = (TextView) clickView.findViewById(R.id.announcement_show_content);
+				announcement_show_content.setText(content_text.getText().toString());
+				
+				TextView announcement_show_date = (TextView) clickView.findViewById(R.id.announcement_show_date);
+				announcement_show_date.setText(date_text.getText().toString());
+				
+				builder.setView(clickView);
+				
+				builder.setPositiveButton("OK",
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								dialog.dismiss();
+
+							}
+						});
+
+				builder.create().show();
+			
+			*/}
 		});
 
 		layout_buttons.add(stool_layout);
